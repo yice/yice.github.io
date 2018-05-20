@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yice Blog</title>
+    <description>关于摄影与设计 | Yice，Photograhper &amp; Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 20 May 2018 16:54:50 +0800</pubDate>
+    <lastBuildDate>Sun, 20 May 2018 16:54:50 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>7个小技巧大幅度提升UI动效品质新</title>
+        <description>&lt;h1 id=&quot;7个小技巧大幅度提升ui动效品质&quot;&gt;7个小技巧大幅度提升UI动效品质&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586f3c7197bee?w=560&amp;amp;h=420&amp;amp;f=jpeg&amp;amp;s=70528&quot; alt=&quot;&quot; /&gt;
+ 优秀的动画，对于提升UI的逼格非常重要，在大多数情况下，针对动画进行合理的调整，就可以让你的UI变得更加出色，好的交互设计，能够展示状态之间的连续性，以及不同UI元素的的关系，同时，能够使得用户的注意力聚焦在重要的地方。
+所有的交互都是用体验版本的InVision Studio做出来的，这些都可以在官网获取到。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;将选项卡种的内容做成可滑动的&quot;&gt;将选项卡种的内容做成可滑动的&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/16358607f0b570f5?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=1155306&quot; alt=&quot;&quot; /&gt;
+左图的内容淡入淡出；右图的内容随着标签一起滑动。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;好的动效将内容从一个标签页淡出，再淡入到另一个标签页；&lt;/li&gt;
+  &lt;li&gt;优秀的动效让页面内容在不同标签之间移动，能够展现过度时的连续性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当你设计选项卡或者弹出菜单这种交互时，试着将内容的位置与打开它的动作相关联。通过这种方式，你可以将你的内容和内容的位置都做成可视动画。做这种页面时，也加上一个可以在不同内容之间切换的滑动手势。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;关联卡片上的相关元素&quot;&gt;关联卡片上的相关元素&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586553c562e26?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=381277&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左边的卡片打开一个新页面是滑上来的；  右边则是扩展了卡片并使其占满屏幕。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;好的动画展示信息详情页时使用左滑或者上划的方式；&lt;/li&gt;
+  &lt;li&gt;优秀的动画会在有共同信息的两种状态之间建立联系。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当给两种不同的状态的过渡做动画时，看看这两种状态之间有没有共有的元素，如果有则可以在动画中体现两者的联系。在InVision Studio中，两个相关联的页面有重复的元素时，当你创建一个Motion的时候，系统会自动在两个元素之间创建关联动画。这让创建动画原型变得轻而易举。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;在内容中使用瀑布流效果&quot;&gt;在内容中使用瀑布流效果&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586737f6ac987?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=803074&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左边的卡片通过滑动和淡入的效果显示; 
+右边的卡片在同样动画的基础上，让每个卡片都有短时间的延迟。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;当卡片进入屏幕时，好的动画改变它的位置和透明度；&lt;/li&gt;
+  &lt;li&gt;优秀的动画则会快速蔓延每组元素。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要达到瀑布流的效果，可以将每个动画元素都保持相同的动画速度以及持续时长，并对其按序设置一定的延时。要将瀑布流的形式应用在组里，不能应用在单独的元素上。保持动画的快速简介，谷歌的提醒功能里，每个元素出现的间隔不超过20毫秒。点击动画里的瀑布流形式查看更多案例。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;让内容推开其他元素&quot;&gt;让内容推开其他元素&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/1635868386af47d6?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=244641&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左边的动画中，动画效果直接出线在其他内容上面。右边的动画中，随着动画的扩大，其他内容被推开了。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;好的动画直接在画面中移动和展示元素；&lt;/li&gt;
+  &lt;li&gt;优秀的动画则会展示出动画对其周围元素的影响。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;让内容与周围的环境相互动。这意味着让内容吸引或者赶走它周围的元素。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;让菜单从按钮中出现&quot;&gt;让菜单从按钮中出现&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/16358697c3ff069d?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=307263&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左图中菜单直接从下面滑入；右图的菜单则从打开它的按钮中扩展出来。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;好的动画菜单出现的方向与打开它的按钮的方向保持一致；&lt;/li&gt;
+  &lt;li&gt;优秀的动画菜单从打开它的按钮中展开。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;用按钮展示不同的状态&quot;&gt;用按钮展示不同的状态&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586adc1926bb6?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=1414382&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左边的动画使用文字表明状态；右边的动画则直接使用按钮展示不同状态。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;好的交互将活动状态用文字方式展示在按钮旁边；&lt;/li&gt;
+  &lt;li&gt;优秀的交互则直接用按钮展示不同状态。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;试着用按钮本身展示不同状态。例如：用旋转菊花或者加载动画代替CTA；或者在按钮背景中加一个动画表明进程。具体方式取决于你，核心就是利用好已有的用户已经与之交互的空间。如果你使用按钮颜色去确认成功状态，对于用户来说就是一个大彩蛋。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;将用户的注意力引导到重要的东西上&quot;&gt;将用户的注意力引导到重要的东西上&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586c953d6851d?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=612310&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左图中的案例使用颜色和位置让元素突出显示；右图中则使用了一个简单的小动画吸引用户的注意力。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;好的设计使用颜色、尺寸和位置，来突出需要格外引起用户注意并触发用户行为的重点内容；&lt;/li&gt;
+  &lt;li&gt;优秀的设计使用动画引导用户将注意力放在重要的地方，并且不会打扰到用户。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当用户需要做出一些重要的操作时，试着将这些操作的按钮以动画的方式展现，以吸引用户的注意力。可以做一些简单细微的动画并逐渐增加强度，并根据行动的重要性改变按钮的大小、颜色和动画的速度。记住只在最重要的操作上使用动画，因为你用的动画越多，它就变得越不重要并且会打扰到用户。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 May 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

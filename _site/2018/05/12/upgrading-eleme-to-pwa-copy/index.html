@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于摄影与设计 | Yice，Photograhper & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keywords"  content="设计">
+    <meta name="theme-color" content="#000000">
+    
+    <title>7个小技巧大幅度提升UI动效品质新 - 木白桃的博客 | Yice Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Yice Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/about-bg-o.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/about-bg-o.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>7个小技巧大幅度提升UI动效品质新</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by Yice on May 12, 2018</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h1 id="7个小技巧大幅度提升ui动效品质">7个小技巧大幅度提升UI动效品质</h1>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586f3c7197bee?w=560&amp;h=420&amp;f=jpeg&amp;s=70528" alt="" />
+ 优秀的动画，对于提升UI的逼格非常重要，在大多数情况下，针对动画进行合理的调整，就可以让你的UI变得更加出色，好的交互设计，能够展示状态之间的连续性，以及不同UI元素的的关系，同时，能够使得用户的注意力聚焦在重要的地方。
+所有的交互都是用体验版本的InVision Studio做出来的，这些都可以在官网获取到。</p>
+
+<hr />
+
+<h2 id="将选项卡种的内容做成可滑动的">将选项卡种的内容做成可滑动的</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/16358607f0b570f5?w=1440&amp;h=810&amp;f=gif&amp;s=1155306" alt="" />
+左图的内容淡入淡出；右图的内容随着标签一起滑动。</p>
+<ul>
+  <li>好的动效将内容从一个标签页淡出，再淡入到另一个标签页；</li>
+  <li>优秀的动效让页面内容在不同标签之间移动，能够展现过度时的连续性。</li>
+</ul>
+
+<p>当你设计选项卡或者弹出菜单这种交互时，试着将内容的位置与打开它的动作相关联。通过这种方式，你可以将你的内容和内容的位置都做成可视动画。做这种页面时，也加上一个可以在不同内容之间切换的滑动手势。</p>
+
+<hr />
+
+<h2 id="关联卡片上的相关元素">关联卡片上的相关元素</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586553c562e26?w=1440&amp;h=810&amp;f=gif&amp;s=381277" alt="" /></p>
+
+<p>左边的卡片打开一个新页面是滑上来的；  右边则是扩展了卡片并使其占满屏幕。</p>
+
+<ul>
+  <li>好的动画展示信息详情页时使用左滑或者上划的方式；</li>
+  <li>优秀的动画会在有共同信息的两种状态之间建立联系。</li>
+</ul>
+
+<p>当给两种不同的状态的过渡做动画时，看看这两种状态之间有没有共有的元素，如果有则可以在动画中体现两者的联系。在InVision Studio中，两个相关联的页面有重复的元素时，当你创建一个Motion的时候，系统会自动在两个元素之间创建关联动画。这让创建动画原型变得轻而易举。</p>
+
+<hr />
+
+<h2 id="在内容中使用瀑布流效果">在内容中使用瀑布流效果</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586737f6ac987?w=1440&amp;h=810&amp;f=gif&amp;s=803074" alt="" /></p>
+
+<p>左边的卡片通过滑动和淡入的效果显示; 
+右边的卡片在同样动画的基础上，让每个卡片都有短时间的延迟。</p>
+
+<ul>
+  <li>当卡片进入屏幕时，好的动画改变它的位置和透明度；</li>
+  <li>优秀的动画则会快速蔓延每组元素。</li>
+</ul>
+
+<p>要达到瀑布流的效果，可以将每个动画元素都保持相同的动画速度以及持续时长，并对其按序设置一定的延时。要将瀑布流的形式应用在组里，不能应用在单独的元素上。保持动画的快速简介，谷歌的提醒功能里，每个元素出现的间隔不超过20毫秒。点击动画里的瀑布流形式查看更多案例。</p>
+
+<hr />
+
+<h2 id="让内容推开其他元素">让内容推开其他元素</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/1635868386af47d6?w=1440&amp;h=810&amp;f=gif&amp;s=244641" alt="" /></p>
+
+<p>左边的动画中，动画效果直接出线在其他内容上面。右边的动画中，随着动画的扩大，其他内容被推开了。</p>
+
+<ul>
+  <li>好的动画直接在画面中移动和展示元素；</li>
+  <li>优秀的动画则会展示出动画对其周围元素的影响。</li>
+</ul>
+
+<p>让内容与周围的环境相互动。这意味着让内容吸引或者赶走它周围的元素。</p>
+
+<hr />
+
+<h2 id="让菜单从按钮中出现">让菜单从按钮中出现</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/16358697c3ff069d?w=1440&amp;h=810&amp;f=gif&amp;s=307263" alt="" /></p>
+
+<p>左图中菜单直接从下面滑入；右图的菜单则从打开它的按钮中扩展出来。</p>
+
+<ul>
+  <li>好的动画菜单出现的方向与打开它的按钮的方向保持一致；</li>
+  <li>优秀的动画菜单从打开它的按钮中展开。</li>
+</ul>
+
+<hr />
+
+<h2 id="用按钮展示不同的状态">用按钮展示不同的状态</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586adc1926bb6?w=1440&amp;h=810&amp;f=gif&amp;s=1414382" alt="" /></p>
+
+<p>左边的动画使用文字表明状态；右边的动画则直接使用按钮展示不同状态。</p>
+
+<ul>
+  <li>好的交互将活动状态用文字方式展示在按钮旁边；</li>
+  <li>优秀的交互则直接用按钮展示不同状态。</li>
+</ul>
+
+<p>试着用按钮本身展示不同状态。例如：用旋转菊花或者加载动画代替CTA；或者在按钮背景中加一个动画表明进程。具体方式取决于你，核心就是利用好已有的用户已经与之交互的空间。如果你使用按钮颜色去确认成功状态，对于用户来说就是一个大彩蛋。</p>
+
+<hr />
+
+<h2 id="将用户的注意力引导到重要的东西上">将用户的注意力引导到重要的东西上</h2>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586c953d6851d?w=1440&amp;h=810&amp;f=gif&amp;s=612310" alt="" /></p>
+
+<p>左图中的案例使用颜色和位置让元素突出显示；右图中则使用了一个简单的小动画吸引用户的注意力。</p>
+
+<ul>
+  <li>好的设计使用颜色、尺寸和位置，来突出需要格外引起用户注意并触发用户行为的重点内容；</li>
+  <li>优秀的设计使用动画引导用户将注意力放在重要的地方，并且不会打扰到用户。</li>
+</ul>
+
+<p>当用户需要做出一些重要的操作时，试着将这些操作的按钮以动画的方式展现，以吸引用户的注意力。可以做一些简单细微的动画并逐渐增加强度，并根据行动的重要性改变按钮的大小、颜色和动画的速度。记住只在最重要的操作上使用动画，因为你用的动画越多，它就变得越不重要并且会打扰到用户。</p>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Yice Blog 2018
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

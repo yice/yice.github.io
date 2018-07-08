@@ -60,14 +60,14 @@ kramdown:
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "live <br> life"
+sidebar-about-description: "Live <br> Life & Design"
 sidebar-avatar: /img/yice-ava.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

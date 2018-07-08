@@ -4,7 +4,7 @@ title:      "7个小技巧大幅度提升UI动效品质新"
 subtitle:   ""
 date:       2018-05-12 12:00:00
 author:     "Yice"
-header-img: "img/about-bg-o.jpg"
+header-img: "img/test-index-bg.jpg"
 ---
 
 # 7个小技巧大幅度提升UI动效品质

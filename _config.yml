@@ -1,9 +1,9 @@
 # Site settings
 title: Yice Blog
-SEOTitle: 木白桃的博客 | Yice Blog
+SEOTitle: Yice's Design Blog
 header-img: 
 email: yicee@outlook.com
-description: "关于摄影与设计 | Yice，Photograhper & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+description: "关于摄影与设计 | Yice，Photograhper & Mobile Lover，UX Designer | Live&Life&Design。"
 keyword: "设计"
 url: "https://yiceli.me"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -67,7 +67,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "一秒不玩剑侠情缘，浑身难受，<br>离开世界之前，一切都是过程"
+sidebar-about-description: "live <br> life"
 sidebar-avatar: /img/yice-ava.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

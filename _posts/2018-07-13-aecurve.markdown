@@ -1,0 +1,81 @@
+---
+layout:     post
+title:      "彻底搞懂AE曲线，让设计中的动效更加有趣"
+subtitle:   ""
+date:       2018-07-13 12:00:00
+author:     "Yice"
+header-img: "img/test-index-bg.jpg"
+tags:
+    - Design
+    - After Effects
+---
+
+阅读此文大约需要4分钟      
+本文首发于微信公众号，[原文链接](https://mp.weixin.qq.com/s/O2eYw_K0B843oB5yLPzC8g)
+
+
+在AE中使用曲线，可以给运动物体添加缓动的效果，使物体的变化更符合现实中物体变化的场景，看上去不会那么生硬，增添了动效的趣味性，下面的文章中我会介绍几种不同的曲线，以及它们的使用场景。
+----- ----
+# 一、位移的速度曲线
+速度曲线表示物体移动速度随时间的变化关系，横坐标表示时间，纵坐标表示移动速度速度。
+
+几种不同的速度曲线图：
+
+## 1、匀速运动
+
+在速度模式的曲线中可以看到物体的运动速度是不变的。
+![](https://user-gold-cdn.xitu.io/2018/7/13/16493027136f2699?w=500&h=200&f=gif&s=85953)
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649304159cdfed7?w=2358&h=588&f=jpeg&s=160475)
+----- -----
+## 2、缓入缓出
+这种运动曲线在开始和结束都有很舒服的过度。
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930541c2b3467?w=500&h=200&f=gif&s=103968)
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649303da28a1bb7?w=2352&h=590&f=jpeg&s=167551)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930962f8d8de4?w=800&h=600&f=gif&s=2537245)
+<div align="center"> by J_Choi</div>
+
+----- 
+## 3、快——慢
+这种曲线类似于手枪打出子弹的场景，初始速度就非常快，然后逐渐缓慢停止下来。调节方式如下图。
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930625acdf4e6?w=500&h=200&f=gif&s=91208)
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649302ca14df628?w=2372&h=604&f=jpeg&s=178361)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930e0d1a0e06e?w=800&h=600&f=gif&s=2228056)
+<div align="center"> by Birju Raikwar</div>
+
+----- ---
+## 4、慢——快
+
+这种曲线在制作物体下落的效果，因为现实中是物体自由落体时都是有重力加速度的， 速度会越来越快。
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649305b1c2b5df5?w=500&h=200&f=gif&s=94692)
+![](https://user-gold-cdn.xitu.io/2018/7/13/16493037cd6759da?w=2348&h=594&f=jpeg&s=173416)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930e52966e23b?w=560&h=420&f=gif&s=432131)
+<div align="center"> byZustin</div>
+
+----- -----
+# 二、旋转速度曲线
+旋转的速度曲线表示物体的旋转速度随时间的变化情况，匀速旋转曲线也可以做出很好看的动画。
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930705a74d3ba?w=500&h=200&f=gif&s=107576)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649304474a7bd93?w=2352&h=592&f=jpeg&s=176519)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930e9a25e9bcc?w=800&h=600&f=gif&s=1787832)
+<div align="center"> by Gal Shir</div>
+
+与位移的速度曲线不同的是，旋转物体的速度曲线是可以有负值的。加入负值时，会往与结束方向相反的方向先弹一下。同样，在第二帧结束时的曲线拉负数，旋转则会回弹一下，这种方式可以让你的设计有回弹的效果，增加吸引力。
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649306ce73d989b?w=500&h=200&f=gif&s=105610)
+![](https://user-gold-cdn.xitu.io/2018/7/13/1649304a0a162bee?w=2348&h=588&f=jpeg&s=184804)
+
+![](https://user-gold-cdn.xitu.io/2018/7/13/164930eff7c1d793?w=800&h=600&f=gif&s=2469329)
+<div align="center"> by Dannnielar</div>
+
+
+# 三、小结
+曲线作为AE中的基础调节工具，还有很多值得探索的地方，运用曲线可以制作出与实际物体运动非常接近的效果，为动效增添趣味效果～
+
+
+

@@ -10,7 +10,7 @@
     <meta name="keywords"  content="设计">
     <meta name="theme-color" content="#000000">
     
-    <title>About - Yice's Design Blog</title>
+    <title>谷歌翻译的UI设计 - Yice's Design Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
+    <link rel="canonical" href="http://localhost:4000/2018/06/11/googletranslate/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -149,156 +149,153 @@
 </script>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/blog-man-bg.jpg')">
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/test-index-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/test-index-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is Yice.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Design" title="Design">Design</a>
+                        
+                    </div>
+                    <h1>谷歌翻译的UI设计</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by Yice on June 11, 2018</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<p>本文翻译自设计师Pendar Yousefi 的文章。<a href="https://medium.com/google-design/a-fish-in-your-ear-134deed70268">原文链接</a></p>
+
+<p>google翻译的即时相机翻译和实时会话功能永远会让用户感到惊讶。除了让人惊叹的天性之外，它们也有非常有用的实际功能，帮助语言学习者、学生、游客和各种需要打破语言藩篱的人。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31d353234c52?w=400&amp;h=300&amp;f=gif&amp;s=3955004" alt="" /></p>
+<h2 id="问题">问题</h2>
+<p>然而在现实中，许多用户并不知道这些功能的存在。在我们做用户调查访谈时，发现许多用户询问是否可以实现我们已经有的功能。后来经过一项研究与调查，我们发现38%的用户并不知道我们有这些功能。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31d9ef2cad9d?w=1920&amp;h=1004&amp;f=png&amp;s=112673" alt="" /></p>
+<h2 id="初次尝试">初次尝试</h2>
+<p>起初我们认为是由于这些功能的入口太小太隐蔽了，因此我们把它们变大，让入口更加引人注目。我们尝试了使用新的UI来做到这一点。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31de064e6e09?w=1920&amp;h=1480&amp;f=png&amp;s=464087" alt="" />
+<strong>出乎意料的是，这产生了相反的效果。相机和实时翻译功能的使用率反而下降了。</strong> 当我们深入研究时，发现许多用户忽略了主要操作界面下面那一堆五颜六色的东西，由于我们曾经在这块区域展示推广广告，用户通常认为这里是不重要的。</p>
+<h2 id="回到界面上">回到界面上</h2>
+<p>因此我们问自己，我们怎样才能最小程度地改变当前用户已经熟悉的界面，让这些功能更加清晰地展示呢？我们调整了图标，添加了文本标签，并且将语音功能分成两个重要但相互独立的功能：听写和会话。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31e545c0723b?w=1920&amp;h=1044&amp;f=png&amp;s=201726" alt="" />
+<strong>这个方法起了作用！所有功能的使用率都增加了，尤其是手写功能，使用率上升了25%！</strong> 我们甚至看到某些用户发微博称赞这些新功能，尽管它们已经存在好几年了！</p>
+<h2 id="改进会话功能的ui">改进会话功能的UI</h2>
+<p>我们没有就此止步。在Google翻译中，我们一直想着如何提升产品的用户体验。我们希望可以把会话功能的UI做的更加简单直观。</p>
+
+<p>在旧的Google翻译UI中，分别使用了三个按钮，左右两侧的按钮分别对应着两种不同的语言，中间的麦克风用于一些智能识别的场景，最大程度的减少用户的额外输入，能够识别用户是否在讲话，使用什么语言，以及何时停止并启动翻译。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31ebb30c51a5?w=1200&amp;h=800&amp;f=gif&amp;s=842408" alt="" />
+当这个神奇的麦克风工作时，一切都显的十分自然，但是对于某些特殊的语言，识别的准确率将大幅降低，但是由于在UI上十分强调“Magic mic”，以至于用户会忘记还有其它的更准确输入方式（使用两边的语言按钮）。当一些用户遇到使用上的问题时，会放弃这个功能，使用其它的输入方式。</p>
+<h2 id="继续改变">继续改变</h2>
+<p>我们始终在思考，如何对交互进行改进，使用户体验更加直观。<br />
+我们通过改变两侧按钮的形状以及颜色使其更加直观，同时，我们也保留的中间的麦克风按钮，但不再像之前的版本里过分的强调，并添加了一些文字描述信息作为辅助。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e31f4d98b4316?w=1920&amp;h=1080&amp;f=png&amp;s=1358452" alt="" />
+同时，我们也与硬件团队合作，使其能够适配“PixelBuds”，我们对交互进行了轻微的调整。例如当Pixelbuds链接时的UI展示。我们的天才设计师liuliu，通过用户研究发现，在对话的过程中，万事开头难，往往对话的开始有时会令人非常尴尬，她设计了一组破冰界面，通过视觉交互的方式，使用户更好的完成破冰的过程。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/9/163e3327d87bfd4b?w=1920&amp;h=1324&amp;f=png&amp;s=226378" alt="" />
+通过我们对交互以及相关技术的改进，谷歌翻译的使用量得到了显著的增长，当然，我们不会停止探索，会继续的扩展新的特性，并使谷歌翻译更易使用。</p>
+
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/05/24/flaticon/" data-toggle="tooltip" data-placement="top" title="扁平化图标的终极设计指南">
+                        Previous<br>
+                        <span>扁平化图标的终极设计指南</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/06/17/progressbar/" data-toggle="tooltip" data-placement="top" title="🐌🐌设计趣味性进度条，让等待不再枯燥">
+                        Next<br>
+                        <span>🐌🐌设计趣味性进度条，让等待不再枯燥</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			<!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    
-    <blockquote>
-  <p>。。。</p>
-</blockquote>
-
-<p>Hey，我是Yice  剑侠情缘玩的停不下来，是兄弟就一起来</p>
-
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    
-    
-<blockquote>
-  <p>Yice.</p>
-</blockquote>
-
-
-</div>
-
-
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+        				
                             
-                                <a href="/tags/#Design" title="Design" rel="8">
+                				<a href="/tags/#Design" title="Design" rel="8">
                                     Design
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#After Effects" title="After Effects" rel="2">
+                				<a href="/tags/#After Effects" title="After Effects" rel="2">
                                     After Effects
                                 </a>
                             
-                        
-                    </div>
+        				
+        			</div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <img src="/img/yice-ava.jpg" />
-                        
-                        
-                            <p>Live <br> Life & Design</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            <li>
-                                <a href="https://twitter.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="http://weibo.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -309,10 +306,52 @@
                     
                 </ul>
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
     <!-- Footer -->
@@ -468,55 +507,6 @@
 
 
 <!-- Multi-Lingual -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    // Changes at v1.7.2: change the language flag from hash-basing to in-memory basing
-    // due to its confliction with catalog anchors.
-    // window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(_hash){
-        var _hash = _hash || window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-        }
-        // interop with catalog 
-        if ("") generateCatalog(".catalog-body");
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            _hash = "#zh"
-        }else{
-            _hash = "#en"
-        }
-        _render(_hash)
-    }
-
-    // init
-    _render();
-</script>
 
 
 

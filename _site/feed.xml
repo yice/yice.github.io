@@ -5,9 +5,730 @@
     <description>关于摄影与设计 | Yice，Photograhper &amp; Mobile Lover，UX Designer | Live&amp;Life&amp;Design。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 10 Jul 2018 00:06:57 +0800</pubDate>
-    <lastBuildDate>Tue, 10 Jul 2018 00:06:57 +0800</lastBuildDate>
+    <pubDate>Fri, 27 Jul 2018 01:05:12 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Jul 2018 01:05:12 +0800</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>如何用AE做出App store中的卡片动态效果</title>
+        <description>&lt;p&gt;阅读此文大约需要7分钟 &lt;br /&gt;
+本文首发于微信公众号，&lt;a href=&quot;https://mp.weixin.qq.com/s/Nx3nhmSEYh2frC2RfReVoA&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;动画效果会讲故事，动效不仅仅是为了愉悦用户，更是为了帮助理解当前操作进展，帮助提高app的使用效率。当动效制作非常成熟时，看起来应当是非常自然的。&lt;/p&gt;
+
+&lt;p&gt;App中随处可见各种各样绚丽的动态效果，从页面跳转到加载进度指示，从状态反馈到下拉刷新。但动效的使用应当自然流畅，过多花哨或者不适当的动效反而会给用户体验带来负面影响。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;一app-store的全新改版&quot;&gt;一、App store的全新改版&lt;/h1&gt;
+
+&lt;p&gt;苹果作为用户体验界的标杆，在最新的iOS11中，对界面及动效做了很多更新迭代。其中最明显的就是App store的全新改版。改版后的应用每日会根据最新时事，精选出小众精选、游戏文化、独立佳作等应用，用卡片的方式展示出来。作为第一级 Tab，巨大、显眼的卡片式设计意味着信息更为聚焦。&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;  
+&amp;lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b167e62f7abf5?&quot; width=300 height=534 align=center /&amp;gt;         
+&lt;/div&gt;
+
+&lt;p&gt;首页的今日推荐页还使用了非常漂亮的转场效果。转场动效是十分重要的一种动效，它的作用是引导用户，让用户更好地理解页面跳转，知道自己身处何方。App store的设计者为了避免卡片展示页和卡片详情页之间的过度过于生硬，利用动效填补了页面跳转的中间过程，使体验更加流畅自然。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b179df8c895a0?w=300&amp;amp;h=534&amp;amp;f=gif&amp;amp;s=1792606&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;二小细节&quot;&gt;二、小细节&lt;/h1&gt;
+
+&lt;p&gt;App store的卡片页和详情页之间的转场在AE中用到的功能并不多，列举出来就是放大缩小、位移、改变透明度、遮罩、曲线等基础功能。而相对于普通的转场动效来说，它的动效更加自然流畅的原因是它注重到了三个细节：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;回弹&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;阴影&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;卡片展开时尺寸不变&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1回弹&quot;&gt;1、回弹&lt;/h2&gt;
+
+&lt;p&gt;回弹即是在原有过渡效果的基础上，借用符合物理规则的轻微颤动来强化用户体验，让动效更加生动。举个例子：当你想让一个球从屏幕最上方落下时，它在停止之前要有几次强度逐渐减弱的回弹才符合物理规律；没有回弹的动画看起来则会非常生硬。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b17bc52769185?w=750&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=161017&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;iOS动效最大的亮点在于，很多地方都有回弹的效果，卡片展开与收起的效果也不例外。&lt;/p&gt;
+
+&lt;h3 id=&quot;实现方式&quot;&gt;实现方式&lt;/h3&gt;
+
+&lt;p&gt;以关闭按钮的回弹为例：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step1:&lt;/strong&gt; 用钢笔工具勾出一条路径，该路径需要弯曲以制作回弹的效果；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step2:&lt;/strong&gt; 选中路径的path属性复制，在要移动的物体的position属性上粘贴，物体的中心点就会沿着路径移动，从而产生回弹的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step3:&lt;/strong&gt; 调整位置运动路径的曲线，使运动更加自然。（关于曲线调节可以查看这篇文章：&lt;a href=&quot;https://juejin.im/post/5b4871836fb9a04f8f378f2c&quot;&gt;彻底搞懂AE曲线，让设计中的动效更加有趣&lt;/a&gt;）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b181be130f84c?w=2800&amp;amp;h=1754&amp;amp;f=jpeg&amp;amp;s=549388&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;小tips： &lt;br /&gt;
+1、卡片与它里面的字、关闭按钮是分离的，分别处于单独的图层上面，因此要为它们创建不同的移动路径。   &lt;br /&gt;
+2、回弹也可以用表达式制作，更加方便快捷。但这里的回弹是物体弹出去以后往下移动，用表达式达不到想要的效果，因此我用了绘制路径的方法。回弹表达式可以参考这篇文章：&lt;a href=&quot;http://www.ui.cn/detail/35851.html&quot;&gt;AE表达式：回弹。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2阴影&quot;&gt;2、阴影&lt;/h2&gt;
+
+&lt;p&gt;阴影可以让用户理解元素的层次，让他们知道两个对象并不在同一高度，不是同一个层级。同时阴影也暗示了用户某个元素其实是可点击的。&lt;/p&gt;
+
+&lt;p&gt;App store中的每个卡片背后都使用了微妙的灰色弥散阴影，让卡片的细节更加丰富，并暗示用户卡片是可交互的。如果去掉阴影，卡片就失去了层次感，也没有了明确的交互引导性，很容易让用户误解为不可点击。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b184b6b80f279?w=651&amp;amp;h=578&amp;amp;f=jpeg&amp;amp;s=205144&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当卡片展开时，阴影也会随之扩散变大，透明度降低，与现实中物体扩大时阴影的变化方式相同。这样的设计可以给用户较高的感知度，能够更加清楚地传递信息。&lt;/p&gt;
+
+&lt;h3 id=&quot;实现方式-1&quot;&gt;实现方式&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;step1:&lt;/strong&gt; 卡片下面新建一个图层，创建一个与卡片形状大小相同的灰色圆角长方形，放在卡片正下方；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step2:&lt;/strong&gt; 将圆角长方形向下移动5像素，使用高斯模糊并降低其透明度，做成阴影图层；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step3:&lt;/strong&gt; 卡片展开时，扩大阴影图层，并继续降低其透明度；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step4:&lt;/strong&gt; 卡片收回时，将阴影图层回归到原来的大小和透明度。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3卡片展开时尺寸不变&quot;&gt;3、卡片展开时尺寸不变&lt;/h2&gt;
+
+&lt;p&gt;这也是iOS卡片的特色之一，仔细观察就会发现，当卡片详情页展开时，卡片的大小其实是没有发生变化的。这样做的好处是，在首页的卡片展示中不会由于图片的放大缩小而丢失细节，用户在首页就可以很清楚的看到推广banner的每个细节。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b179df8c895a0?w=300&amp;amp;h=534&amp;amp;f=gif&amp;amp;s=1792606&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;实现方式-2&quot;&gt;实现方式&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;step1:&lt;/strong&gt; 在卡片上加一个圆角长方形遮罩，使卡片只露出遮罩的部分；&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step2:&lt;/strong&gt; 点击卡片展示卡片详情页时，放大遮罩，使卡片全部露出来。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step3:&lt;/strong&gt; 卡片收起时，再将遮罩缩小到原来的大小。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/19/164b18555180e583?w=2800&amp;amp;h=1754&amp;amp;f=jpeg&amp;amp;s=574014&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;以上是我对App store中卡片动效的理解，相信每个人对它都有不同的理解，都可以在AE中用不同的方式做出来，具体怎么操作不重要，重要的是如何对一个动效进行解析和思考，并总结方法用在自己的设计上。&lt;/p&gt;
+
+&lt;p&gt;我已经将AE工程源文件上传到百度网盘，下载就可以看到我每一步具体的操作步骤～ &lt;br /&gt;
+&lt;a href=&quot;https://pan.baidu.com/s/1S-OpFH6SsJ2flD5Zfe8PSQ&quot;&gt;点击下载&lt;/a&gt; &lt;br /&gt;
+密码: dccm&lt;/p&gt;
+
+&lt;p&gt;对于这篇文章中的动效有其他更好的方法也欢迎和我留言讨论哦，写教程不易，喜欢就点个赞吧～&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 23 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/23/appcard/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/23/appcard/</guid>
+        
+        <category>Design</category>
+        
+        <category>After Effects</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>彻底搞懂AE曲线，让设计中的动效更加有趣</title>
+        <description>&lt;p&gt;阅读此文大约需要4分钟    &lt;br /&gt;
+本文首发于微信公众号，&lt;a href=&quot;https://mp.weixin.qq.com/s/O2eYw_K0B843oB5yLPzC8g&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在AE中使用曲线，可以给运动物体添加缓动的效果，使物体的变化更符合现实中物体变化的场景，看上去不会那么生硬，增添了动效的趣味性，下面的文章中我会介绍几种不同的曲线，以及它们的使用场景。
+—– —-&lt;/p&gt;
+&lt;h1 id=&quot;一位移的速度曲线&quot;&gt;一、位移的速度曲线&lt;/h1&gt;
+&lt;p&gt;速度曲线表示物体移动速度随时间的变化关系，横坐标表示时间，纵坐标表示移动速度速度。&lt;/p&gt;
+
+&lt;p&gt;几种不同的速度曲线图：&lt;/p&gt;
+
+&lt;h2 id=&quot;1匀速运动&quot;&gt;1、匀速运动&lt;/h2&gt;
+
+&lt;p&gt;在速度模式的曲线中可以看到物体的运动速度是不变的。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/16493027136f2699?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=85953&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649304159cdfed7?w=2358&amp;amp;h=588&amp;amp;f=jpeg&amp;amp;s=160475&quot; alt=&quot;&quot; /&gt;
+—– —–&lt;/p&gt;
+&lt;h2 id=&quot;2缓入缓出&quot;&gt;2、缓入缓出&lt;/h2&gt;
+&lt;p&gt;这种运动曲线在开始和结束都有很舒服的过度。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930541c2b3467?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=103968&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649303da28a1bb7?w=2352&amp;amp;h=590&amp;amp;f=jpeg&amp;amp;s=167551&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930962f8d8de4?w=800&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=2537245&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt; by J_Choi&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;3快慢&quot;&gt;3、快——慢&lt;/h2&gt;
+&lt;p&gt;这种曲线类似于手枪打出子弹的场景，初始速度就非常快，然后逐渐缓慢停止下来。调节方式如下图。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930625acdf4e6?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=91208&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649302ca14df628?w=2372&amp;amp;h=604&amp;amp;f=jpeg&amp;amp;s=178361&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930e0d1a0e06e?w=800&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=2228056&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt; by Birju Raikwar&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;4慢快&quot;&gt;4、慢——快&lt;/h2&gt;
+
+&lt;p&gt;这种曲线在制作物体下落的效果，因为现实中是物体自由落体时都是有重力加速度的， 速度会越来越快。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649305b1c2b5df5?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=94692&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/16493037cd6759da?w=2348&amp;amp;h=594&amp;amp;f=jpeg&amp;amp;s=173416&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930e52966e23b?w=560&amp;amp;h=420&amp;amp;f=gif&amp;amp;s=432131&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt; byZustin&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;二旋转速度曲线&quot;&gt;二、旋转速度曲线&lt;/h1&gt;
+&lt;p&gt;旋转的速度曲线表示物体的旋转速度随时间的变化情况，匀速旋转曲线也可以做出很好看的动画。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930705a74d3ba?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=107576&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649304474a7bd93?w=2352&amp;amp;h=592&amp;amp;f=jpeg&amp;amp;s=176519&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930e9a25e9bcc?w=800&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=1787832&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt; by Gal Shir&lt;/div&gt;
+
+&lt;p&gt;与位移的速度曲线不同的是，旋转物体的速度曲线是可以有负值的。加入负值时，会往与结束方向相反的方向先弹一下。同样，在第二帧结束时的曲线拉负数，旋转则会回弹一下，这种方式可以让你的设计有回弹的效果，增加吸引力。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649306ce73d989b?w=500&amp;amp;h=200&amp;amp;f=gif&amp;amp;s=105610&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/1649304a0a162bee?w=2348&amp;amp;h=588&amp;amp;f=jpeg&amp;amp;s=184804&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/13/164930eff7c1d793?w=800&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=2469329&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt; by Dannnielar&lt;/div&gt;
+
+&lt;h1 id=&quot;三小结&quot;&gt;三、小结&lt;/h1&gt;
+&lt;p&gt;曲线作为AE中的基础调节工具，还有很多值得探索的地方，运用曲线可以制作出与实际物体运动非常接近的效果，为动效增添趣味效果～&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 13 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/13/aecurve/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/13/aecurve/</guid>
+        
+        <category>Design</category>
+        
+        <category>After Effects</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>探索移动端的搜索设计</title>
+        <description>&lt;p&gt;本文翻译自Graeme Fulton文章。&lt;a href=&quot;https://blog.prototypr.io/ui-progress-bars-to-make-you-enjoy-the-wait-1d973f6f8034&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;文中介绍的某些概念也许可行性不高，但可以让你设计的界面变得富有情感，尤其是在用户等待的过程中。&lt;/p&gt;
+
+&lt;p&gt;“根据心理学家的说法，无聊只是由于缺少刺激，是用户的期待没有得到满足。如果我们用界面设计来刺激他们会怎样呢？” ——by Alice Kotlyarenko&lt;/p&gt;
+
+&lt;h2 id=&quot;1蜗牛进度条&quot;&gt;1、蜗牛进度条🐌&lt;/h2&gt;
+&lt;div align=&quot;center&quot;&gt;
+&amp;lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640b81c2485476f?&quot; width=400 height=300 align=center /&amp;gt; &lt;/div&gt;
+&lt;div align=&quot;center&quot;&gt;by Andrey Davlikanoff&lt;/div&gt;
+
+&lt;div align=&quot;center&quot;&gt;  
+&amp;lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640b824ae5ac8ac?&quot; width=400 height=300 align=center /&amp;gt;         
+&lt;/div&gt;
+&lt;div align=&quot;center&quot;&gt; by Tom Loots&lt;/div&gt;
+
+&lt;h2 id=&quot;2沙滩球进度条&quot;&gt;2、沙滩球进度条⛱&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640b9ae341bb395?w=400&amp;amp;h=300&amp;amp;f=gif&amp;amp;s=2398232&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3人物进度条&quot;&gt;3、人物进度条&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640b9c5c558efe6?w=400&amp;amp;h=300&amp;amp;f=gif&amp;amp;s=3311589&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;  
+&amp;lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640b9ca7ca8d232?&quot; width=400 height=300 align=center /&amp;gt;         
+&lt;/div&gt;
+
+&lt;h2 id=&quot;4香烟进度条&quot;&gt;4、香烟进度条&lt;/h2&gt;
+
+&lt;p&gt;这两个进度条展示了由于烟草物质的不同，吸烟会带来不同的结果。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb2b5fe7de22?w=400&amp;amp;h=300&amp;amp;f=jpeg&amp;amp;s=7594&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb2f33b7ac65?w=400&amp;amp;h=300&amp;amp;f=png&amp;amp;s=15486&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5高尔夫球进度条&quot;&gt;5、高尔夫球进度条&lt;/h2&gt;
+&lt;div align=&quot;center&quot;&gt;  
+&amp;lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb3fa33c4682?&quot; width=400 height=300 align=center /&amp;gt;         
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb4c86506f67?w=400&amp;amp;h=300&amp;amp;f=jpeg&amp;amp;s=13638&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6是否可以拉动进度条&quot;&gt;6、是否可以拉动进度条…&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb6e0fd39480?w=800&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=1056580&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;7下载中断会怎样呢&quot;&gt;7、下载中断会怎样呢？&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb7628790a90&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;想知道更多情感化界面设计的知识，可以看Alice的这篇文章：&lt;a href=&quot;https://www.smashingmagazine.com/2018/04/designing-emotional-interfaces-boring-apps/?ref=prototyprio&quot;&gt;怎样为无聊的应用增添情感化设计。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;她用最近流行的Tunnel Bear 作为例子。传送熊让VPN这个无聊的概念变得有趣。下面是他们降级过程的动画。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/17/1640bb82e02aa60e?w=500&amp;amp;h=279&amp;amp;f=gif&amp;amp;s=1023184&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/01/mobilesearch/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/01/mobilesearch/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>🐌🐌设计趣味性进度条，让等待不再枯燥</title>
+        <description>&lt;p&gt;本文翻译自Shashank Sahay的文章，&lt;a href=&quot;https://medium.muz.li/designing-search-for-mobile-apps-ab2593e9e413&quot;&gt;查看原文&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;这篇文章将探索设计搜索功能的几种不同方式，以及这样设计的原因。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/1/16453e827beee07e?w=1920&amp;amp;h=720&amp;amp;f=png&amp;amp;s=373132&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这篇文章中，我将讨论两种最流行的设计搜索功能的方式：登陆页面上的搜索框和导航栏上的搜索选项，并探索如何为你的App从中选择一个合适的搜索方式。&lt;/p&gt;
+&lt;h1 id=&quot;app中的搜索功能&quot;&gt;App中的搜索功能&lt;/h1&gt;
+
+&lt;p&gt;我们日常使用的大多数app都有搜索功能，这些app设计搜索功能的方式则千差万别。但是，为什么需要对同一个功能做不同的设计呢？有没有最优的选择呢？让我们来看一看。&lt;/p&gt;
+
+&lt;h2 id=&quot;主页面上的搜索栏&quot;&gt;主页面上的搜索栏&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/1/16453c20526000f4?w=2000&amp;amp;h=836&amp;amp;f=png&amp;amp;s=464582&quot; alt=&quot;&quot; /&gt;
+这几个常用的app都把搜索栏设计在了主页面上，这种设计的优点是设计栏很容易被发现，因为大部分时间它都在页面的最顶端。&lt;/p&gt;
+
+&lt;p&gt;这种顶部的搜索框更适用于用户有明确的搜索意图的情况，搜索的结果将取决于用户输入的关键字。&lt;/p&gt;
+
+&lt;p&gt;（这个理念同样适用于将搜索icon放在页面右上角的app，我曾经将这两种方式放在一起进行比较，发现它们的易用、和可获得性、甚至连点击次数都十分相似。）&lt;/p&gt;
+
+&lt;h2 id=&quot;将搜索标签放在导航栏中&quot;&gt;将搜索标签放在导航栏中&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/1/16453c17297a7d5a?w=2000&amp;amp;h=836&amp;amp;f=png&amp;amp;s=616621&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这些app将搜索功能作为一个标签放在了导航栏中。这种方式中，搜索功能没有上一种方式那样容易被发现，但是它们很容易被访问，因为用户用拇指点击就可以轻松访问。&lt;/p&gt;
+
+&lt;p&gt;这种方式中，搜索功能有一个单独的页面，搜索页在顶部有一个搜索框，页面的其余地方是一些数据，这些数据既可以帮助用户搜索，也可以帮助用户探索平台上的内容。这种方式适用于没有明确搜索意图的用户进行探索性搜索。
+——– ——&lt;/p&gt;
+&lt;h1 id=&quot;使用搜索框还是搜索页面&quot;&gt;使用搜索框还是搜索页面？&lt;/h1&gt;
+
+&lt;p&gt;这两种搜索功能的设计方式服务于不同的用户，使用哪种设计方式取决于是哪种类型的平台以及平台提供什么内容。&lt;/p&gt;
+
+&lt;h2 id=&quot;使用顶部搜索框的情况&quot;&gt;使用顶部搜索框的情况&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户打开app的主要目的是搜索一些东西。例如：Google地图、优步或者 Zomato。大多数时间用户打开这些app都希望搜索一个地点、餐厅或者菜肴。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户有明确的搜索意图，就像在Facebook中，用户通常使用搜索功能搜索其它用户或页面，即使有时他们不是很确定它们是怎样拼写的。类似Facebook这种平台，用户对他们想要搜索的信息有很清晰的了解，即使他们可能不太了解，平台也无法帮助他们。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;在底部导航栏添加搜索标签的情况&quot;&gt;在底部导航栏添加搜索标签的情况&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;你希望能够鼓励用户探索和发现平台上的新内容，从而提高用户的参与度。例如：Instagram and Twitter这两个平台都希望用户可以在app上停留更多的时间，因此它们在你的搜索范围之外，提供了个性化的的内容，帮助你发现你可能感兴趣的新用户和新内容。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户不确定他们在寻找什么时，app可以指导用户发现他们想要的内容。例如：Netflix and Uber Eats，这两个app允许用户通过流派和菜系去探索app，这适用于这样的用户，他们知道自己想看一档喜剧节目，但不确定应该看哪一个。
+—— —–&lt;/p&gt;
+    &lt;h1 id=&quot;airbnb是怎么做的&quot;&gt;Airbnb是怎么做的？&lt;/h1&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/7/1/16453c38b50ef530?w=488&amp;amp;h=836&amp;amp;f=jpeg&amp;amp;s=104349&quot; alt=&quot;&quot; /&gt;
+Airbnb混合使用了这两种搜索功能的设计方式，在主页面上方有搜索栏，并且页面下方的的导航栏也有搜索按钮。Airbnb肯定对此有着一定的考虑，通过这种方式，他可以同时顾及到两类用户：有着明确搜索意图的用户，以及随便逛逛还在想要去哪里的用户。
+—– —&lt;/p&gt;
+
+&lt;h1 id=&quot;结论&quot;&gt;结论&lt;/h1&gt;
+&lt;p&gt;两种不同的设计方案都各有优劣，都有各自不同的适用场景，通过上面的例子，我们可以发现，有两个因素决定我们采用何种搜索方案——用户的使用意图以及产品能够为用户提供何种功能。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;欢迎关注微信公众号：IceyTalk   
+[原文链接](https://mp.weixin.qq.com/s?__biz=MzU1OTY0NzIxNQ==&amp;amp;tempkey=OTYzX0hSdTN4QVY5djA1NmFWYmpFbkNXamtOWTdaRE5FTk13X3lkM1hRQm5RdHlTdk85WTZlQkY4Q2pYUXQzQ1N1QUExV3JVSkY0aWRDdHNjWC1wV19SQlpuSlMyRWMxQ0FBRW1TNnpoSklkbE5YaW9Jc2dDMDJOR01HRFRYSi02SU9ya0twMVpQU05iQkxXZWwxelcwS3ktQlBBTVFPWjAzMjU4Qk9SSWd%2Bfg%3D%3D&amp;amp;chksm=7c1551974b62d881166b3a7a2736e3dbedd6c271bb3c1ee3304fe4d6f34f6c1d10482d6df0f7#rd)  &lt;/code&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 17 Jun 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/06/17/progressbar/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/17/progressbar/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>谷歌翻译的UI设计</title>
+        <description>&lt;p&gt;本文翻译自设计师Pendar Yousefi 的文章。&lt;a href=&quot;https://medium.com/google-design/a-fish-in-your-ear-134deed70268&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;google翻译的即时相机翻译和实时会话功能永远会让用户感到惊讶。除了让人惊叹的天性之外，它们也有非常有用的实际功能，帮助语言学习者、学生、游客和各种需要打破语言藩篱的人。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31d353234c52?w=400&amp;amp;h=300&amp;amp;f=gif&amp;amp;s=3955004&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;然而在现实中，许多用户并不知道这些功能的存在。在我们做用户调查访谈时，发现许多用户询问是否可以实现我们已经有的功能。后来经过一项研究与调查，我们发现38%的用户并不知道我们有这些功能。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31d9ef2cad9d?w=1920&amp;amp;h=1004&amp;amp;f=png&amp;amp;s=112673&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;初次尝试&quot;&gt;初次尝试&lt;/h2&gt;
+&lt;p&gt;起初我们认为是由于这些功能的入口太小太隐蔽了，因此我们把它们变大，让入口更加引人注目。我们尝试了使用新的UI来做到这一点。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31de064e6e09?w=1920&amp;amp;h=1480&amp;amp;f=png&amp;amp;s=464087&quot; alt=&quot;&quot; /&gt;
+&lt;strong&gt;出乎意料的是，这产生了相反的效果。相机和实时翻译功能的使用率反而下降了。&lt;/strong&gt; 当我们深入研究时，发现许多用户忽略了主要操作界面下面那一堆五颜六色的东西，由于我们曾经在这块区域展示推广广告，用户通常认为这里是不重要的。&lt;/p&gt;
+&lt;h2 id=&quot;回到界面上&quot;&gt;回到界面上&lt;/h2&gt;
+&lt;p&gt;因此我们问自己，我们怎样才能最小程度地改变当前用户已经熟悉的界面，让这些功能更加清晰地展示呢？我们调整了图标，添加了文本标签，并且将语音功能分成两个重要但相互独立的功能：听写和会话。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31e545c0723b?w=1920&amp;amp;h=1044&amp;amp;f=png&amp;amp;s=201726&quot; alt=&quot;&quot; /&gt;
+&lt;strong&gt;这个方法起了作用！所有功能的使用率都增加了，尤其是手写功能，使用率上升了25%！&lt;/strong&gt; 我们甚至看到某些用户发微博称赞这些新功能，尽管它们已经存在好几年了！&lt;/p&gt;
+&lt;h2 id=&quot;改进会话功能的ui&quot;&gt;改进会话功能的UI&lt;/h2&gt;
+&lt;p&gt;我们没有就此止步。在Google翻译中，我们一直想着如何提升产品的用户体验。我们希望可以把会话功能的UI做的更加简单直观。&lt;/p&gt;
+
+&lt;p&gt;在旧的Google翻译UI中，分别使用了三个按钮，左右两侧的按钮分别对应着两种不同的语言，中间的麦克风用于一些智能识别的场景，最大程度的减少用户的额外输入，能够识别用户是否在讲话，使用什么语言，以及何时停止并启动翻译。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31ebb30c51a5?w=1200&amp;amp;h=800&amp;amp;f=gif&amp;amp;s=842408&quot; alt=&quot;&quot; /&gt;
+当这个神奇的麦克风工作时，一切都显的十分自然，但是对于某些特殊的语言，识别的准确率将大幅降低，但是由于在UI上十分强调“Magic mic”，以至于用户会忘记还有其它的更准确输入方式（使用两边的语言按钮）。当一些用户遇到使用上的问题时，会放弃这个功能，使用其它的输入方式。&lt;/p&gt;
+&lt;h2 id=&quot;继续改变&quot;&gt;继续改变&lt;/h2&gt;
+&lt;p&gt;我们始终在思考，如何对交互进行改进，使用户体验更加直观。&lt;br /&gt;
+我们通过改变两侧按钮的形状以及颜色使其更加直观，同时，我们也保留的中间的麦克风按钮，但不再像之前的版本里过分的强调，并添加了一些文字描述信息作为辅助。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e31f4d98b4316?w=1920&amp;amp;h=1080&amp;amp;f=png&amp;amp;s=1358452&quot; alt=&quot;&quot; /&gt;
+同时，我们也与硬件团队合作，使其能够适配“PixelBuds”，我们对交互进行了轻微的调整。例如当Pixelbuds链接时的UI展示。我们的天才设计师liuliu，通过用户研究发现，在对话的过程中，万事开头难，往往对话的开始有时会令人非常尴尬，她设计了一组破冰界面，通过视觉交互的方式，使用户更好的完成破冰的过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/6/9/163e3327d87bfd4b?w=1920&amp;amp;h=1324&amp;amp;f=png&amp;amp;s=226378&quot; alt=&quot;&quot; /&gt;
+通过我们对交互以及相关技术的改进，谷歌翻译的使用量得到了显著的增长，当然，我们不会停止探索，会继续的扩展新的特性，并使谷歌翻译更易使用。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 11 Jun 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/06/11/googletranslate/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/11/googletranslate/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>扁平化图标的终极设计指南</title>
+        <description>&lt;p&gt;本文翻译自设计师Slava Shestopalov的文章        &lt;a href=&quot;https://medium.muz.li/icon-set-3b4fc87dc6b5&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;1使用网格&quot;&gt;1、使用网格&lt;/h1&gt;
+&lt;p&gt;一个图标通常是由矩形、圆形、三角形等基本元素演变而成，将图标模糊后再去观察它们的光斑，会发现它们基本有相同的视觉重量。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/1639293153b8a3dc?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=77584&quot; alt=&quot;&quot; /&gt;
+根据图标的形状将它们放在对应的网格中，就会发现，正方形图标会比三角形或者长方形的图标更加紧凑。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/1639293d7859d77b?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=102752&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392941d63aa62a?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=115311&quot; alt=&quot;&quot; /&gt;
+图标越紧凑，占用的空间就越少。图标的边缘越锋利或者细节越少，占用的空间就越大。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929508a4aaf06?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=190870&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392956bb998e13?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=126418&quot; alt=&quot;&quot; /&gt;
+但是也不要被网格所控制，网格是用来帮助你而不是限制你的。如果一个图标加上某些突出的元素会更好看，那就加上吧！
+—– –&lt;/p&gt;
+&lt;h1 id=&quot;2注意像素网格&quot;&gt;2、注意像素网格&lt;/h1&gt;
+&lt;p&gt;和网格对齐，并给线形图标2个像素的线宽度，可以让图标在非retina屏幕上也很清楚。2像素中心对齐的边框可以保证足够的厚度和清晰的轮廓。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/1639297f271538ba?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=83755&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392982c8ee0c93?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=96008&quot; alt=&quot;&quot; /&gt;
+如果你选择使用线宽为1像素的图标，则应该使用内部对齐或外部对齐，而不是中心对齐。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392dbb6bf8eeb5?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=85101&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/1639298c36acd8c4?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=95876&quot; alt=&quot;&quot; /&gt;
+1像素中心对齐的边框会使图标放大时变得模糊。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929732a46fece?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=78467&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392977cc320bdb?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=90340&quot; alt=&quot;&quot; /&gt;
+根据像素网格设置对角线的起始点。45°、30°和60°的对角线比不均匀的对角线看起来更加清楚，比如13.7°或81°。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392997cab1dbbd?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=20885&quot; alt=&quot;&quot; /&gt;
+—– —&lt;/p&gt;
+&lt;h1 id=&quot;3使图标的细节保持一致&quot;&gt;3、使图标的细节保持一致&lt;/h1&gt;
+&lt;p&gt;最好从最复杂的图标开始整套图标的创作，它将决定细节的多少，并让其它图标保持同样的细节程度。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929dca5980046?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=12857&quot; alt=&quot;&quot; /&gt;
+当一套图标中每个图标的细节程度不同时，细节越多的那个将越容易吸引用户的注意力。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929e155ee7c3c?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=13427&quot; alt=&quot;&quot; /&gt;
+—– –&lt;/p&gt;
+&lt;h1 id=&quot;4控制最小间隙的大小&quot;&gt;4、控制最小间隙的大小&lt;/h1&gt;
+&lt;p&gt;一个图标中，邻近元素的距离不能太小；在一套图标中，确定一个最小的距离并应用于图标，这样可以避免图标给人黏在一起的感觉。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929e738df3ea3?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=57287&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929e9b83d4e42?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=343445&quot; alt=&quot;&quot; /&gt;
+做线性图标时，让最小距离和线宽相同是一个很好的方法。线应该明确的分开或者连接，不要让用户产生困惑。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929ef6c71554b?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=54008&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929f33eaca8cd?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=207413&quot; alt=&quot;&quot; /&gt;
+—– —&lt;/p&gt;
+&lt;h1 id=&quot;5删掉重复的部分&quot;&gt;5、删掉重复的部分&lt;/h1&gt;
+&lt;p&gt;在一套图标中可能会有重复的细节，删掉这些重复的部分，让用户的注意力集中在不同的元素上。就像数学里面的分数简化，用户看到的干扰信息越少，就越容易理解图标。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/163929fd39778ca6&quot; alt=&quot;&quot; /&gt;
+如果目标用户已经意识到了他使用的是什么，就没有必要一次又一次地重复这些元素了。举个例子，不使用带邮件的图标并不会让用户觉得他不是在使用邮件App。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a023cd507e1?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=269283&quot; alt=&quot;&quot; /&gt;
+这个准则同样适用于各种边框装饰、icon的背景等。如果它们不能帮助用户理解icon，就会反过来干扰用户。
+—– —-&lt;/p&gt;
+&lt;h1 id=&quot;6选择一种特定的风格并遵循它&quot;&gt;6、选择一种特定的风格并遵循它&lt;/h1&gt;
+&lt;p&gt;不要在一套图标中混合使用侧视图和前视图，让icon保持一致的风格可以帮助用户辨别icon，并暗示用户它们有相同的重要性或者状态。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a0d4ef2e250?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=34424&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a0f4acc4c74?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=33976&quot; alt=&quot;&quot; /&gt;
+这个准则同样适用于线性图标和填充图标。如果将这两种风格的图标混合在一起，用户便会认为它们可能有不同的重要性或者状态。例如：填充图标会跳转到关键页面，而线性图标会跳转到其它页面。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a11226413a0?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=21987&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a1281bef022&quot; alt=&quot;&quot; /&gt;
+在一套图标中有两种变体是很好的，例如用线性图标代表常态或者未激活状态；而用填充图标代表选中状态。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a1c214e2f9e?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=709631&quot; alt=&quot;&quot; /&gt;
+—- –&lt;/p&gt;
+&lt;h1 id=&quot;7用2的倍数为尺寸&quot;&gt;7、用2的倍数为尺寸&lt;/h1&gt;
+&lt;p&gt;8像素网格和12分栏的布局被用于许多app界面，因为相比于十进制的尺寸，它们更加灵活易调节。12可以被2、3、4和6整除，因此24和48像素的图标区域已经成为标准区域，它们可以在需要时随时缩放。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a25109ad739?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=421779&quot; alt=&quot;&quot; /&gt;
+—– –&lt;/p&gt;
+&lt;h1 id=&quot;8保持轮廓干净和准确&quot;&gt;8、保持轮廓干净和准确&lt;/h1&gt;
+&lt;p&gt;我们的目标不是做到完美，也不需要为了画完美的线条而画出一条完美的线条。但这对于最终产品中正确的，而不是扭曲的图标渲染是很重要的。永远记得尽量使用最少的形状锚点绘制图标，并保证相邻元素间没有空隙。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a32a7770512?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=11352&quot; alt=&quot;&quot; /&gt;
+这和恼人的“8.999 px”和“100.001px”一样。如果形状的锚点放在合适的位置，icon的边缘看起来就会很清晰，并且但你合并形状的时候，不会多出锚点或者空隙。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a37ed2dd537?w=1000&amp;amp;h=600&amp;amp;f=gif&amp;amp;s=29500&quot; alt=&quot;&quot; /&gt;
+—- –&lt;/p&gt;
+&lt;h1 id=&quot;9清理源文件&quot;&gt;9、清理源文件&lt;/h1&gt;
+&lt;p&gt;在用Sketch等设计工具产生SVG图时，会产生很多多余的“副产品“，例如多余的group、图层，还有裁剪的模板。虽然在Sketch中，所有事情看起来都很美好，没有多余的东西。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a5aa89bc83b?w=1000&amp;amp;h=600&amp;amp;f=png&amp;amp;s=45664&quot; alt=&quot;&quot; /&gt;
+但当我们用其他的编辑器例如（AI）打开此SVG文件时，你会发现空的图层，以及一些无用的蒙版，当开发者将SVG转化为图标时，或者直接在网页上使用这些SVG时，都可能会产生问题。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a6094cc346c?w=1000&amp;amp;h=600&amp;amp;f=png&amp;amp;s=33015&quot; alt=&quot;&quot; /&gt;
+当然，这些多余的东西都是可以删除的。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a62f40829eb?w=1000&amp;amp;h=600&amp;amp;f=png&amp;amp;s=28444&quot; alt=&quot;&quot; /&gt;
+经过删除编辑后的SVG的文件，会与原来的预览图有些不同。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/24/16392a52ba673af2?w=1000&amp;amp;h=600&amp;amp;f=png&amp;amp;s=47324&quot; alt=&quot;&quot; /&gt;
+—– –
+能够看到这里的，都是希望能够通过一些技巧和经验能够做出更好的设计，如果你想更深入的了解设计，推荐你阅读下面的文章：&lt;a href=&quot;https://medium.com/@shestopalov.v/design-types-7d75839a20ea&quot;&gt;Why UX, CX, UI, IA, IxD, and Other Sorts of Design Are Dumb&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 24 May 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/05/24/flaticon/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/24/flaticon/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>为什么上线的App没有Sketch里的设计稿好看？</title>
+        <description>&lt;p&gt;本文翻译自Nathan Gitter 的文章     &lt;a href=&quot;https://medium.com/@nathangitter/why-your-app-looks-better-in-sketch-3a01b22c43d7?from=singlemessage&amp;amp;isappinstalled=0&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;发现不同&quot;&gt;发现不同&lt;/h1&gt;
+
+&lt;p&gt;你能看出这两张图的差别吗？
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378e50cc017ef3?w=2000&amp;amp;h=669&amp;amp;f=jpeg&amp;amp;s=143343&quot; alt=&quot;&quot; /&gt;
+仔细看，你就会注意到细微的差别，右边的图片：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;阴影范围更大；&lt;/li&gt;
+  &lt;li&gt;渐变的颜色更暗；&lt;/li&gt;
+  &lt;li&gt;段落中文字的第一行有一个单词“in”；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;左边的图片是Sketch中的设计稿的截图，右边的图片是在iOS中的还原。这些差异会在图像渲染时出现，尽管两张图中用了完全相同的字体、行间距、阴影半径、颜色和渐变属性。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378e83a65c4e57?w=600&amp;amp;h=460&amp;amp;f=gif&amp;amp;s=318227&quot; alt=&quot;&quot; /&gt;
+如你所见，把设计稿转换成真实的代码时，一些细节就会丢失。接下来我会深入探讨这些细节并告诉你如何做才能避免信息的丢失。
+—- —&lt;/p&gt;
+
+&lt;h1 id=&quot;为什么要关注细节&quot;&gt;为什么要关注细节？&lt;/h1&gt;
+
+&lt;p&gt;设计对于一款应用的成功与否至关重要，尤其在iOS系统中，因为用户会更喜欢使用流畅和好看的App。&lt;/p&gt;
+
+&lt;p&gt;如果你是一个移动端app的设计师或者开发者，你就会知道细节对于用户体验的重要性。高质量的软件来自于开发者对于每个细节的深度考虑。&lt;/p&gt;
+
+&lt;p&gt;App没有设计原稿好看有很多原因，我将探讨最微妙的原因——Sketch和iOS有不同的渲染方式。&lt;br /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378eb486099323?w=2000&amp;amp;h=888&amp;amp;f=jpeg&amp;amp;s=44623&quot; alt=&quot;&quot; /&gt;
+—– —&lt;/p&gt;
+
+&lt;h1 id=&quot;转化中丢失的信息&quot;&gt;转化中丢失的信息&lt;/h1&gt;
+
+&lt;p&gt;几种UI元素在Sketch和iOS中有显著的差异：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;字体&lt;/li&gt;
+  &lt;li&gt;阴影&lt;/li&gt;
+  &lt;li&gt;渐变&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1排版&quot;&gt;1、排版&lt;/h2&gt;
+
+&lt;p&gt;字体和排版可以用很多方式实现，本文中我使用UILabel进行测试验证（Sketch中用的是“Text”，iOS中用的Label）。&lt;/p&gt;
+
+&lt;p&gt;让我们看一个例子：
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378ee78fa11aac?w=2000&amp;amp;h=952&amp;amp;f=jpeg&amp;amp;s=303847&quot; alt=&quot;&quot; /&gt;
+上面例子中最大的区别是换行的位置。第三段的文字在Sketch中是从“25”开始断行，而在app中则从“point”断行。同样的问题也出现在文本段落中——断行不一致。&lt;/p&gt;
+
+&lt;p&gt;另一个细微的差别是Sketch中的行距和字间距会稍微大一些。&lt;/p&gt;
+
+&lt;p&gt;下面的动图可以更清楚地看到两张图片的差异：&lt;br /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378f11fb2efebb?w=450&amp;amp;h=550&amp;amp;f=gif&amp;amp;s=238560&quot; alt=&quot;&quot; /&gt;
+使用其他的字体会怎样呢？用Lato（另一种常用的免费字体）替换掉San Francisco会得到下面结果：
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/19/16378f1a14e47ebb?w=450&amp;amp;h=536&amp;amp;f=gif&amp;amp;s=202841&quot; alt=&quot;&quot; /&gt;
+好多了！&lt;/p&gt;
+
+&lt;p&gt;虽然他们的行距和字间距依然有差别，但这些差别非常细微。但是也要注意，如果文本需要与其他元素（例如背景图片）对齐，这些差异在视觉上就会被放大。&lt;/p&gt;
+
+&lt;h3 id=&quot;怎么解决&quot;&gt;怎么解决？&lt;/h3&gt;
+
+&lt;p&gt;造成以上问题的原因，一部分是由于iOS的默认字体：San Francisco，当iOS渲染系统默认字体时，系统会自动的调整字间距，可以在&lt;a href=&quot;https://developer.apple.com/fonts/&quot;&gt;苹果官网&lt;/a&gt;上找到，如果你的设计字体采用了SF,强烈推荐SF Font Fixer的Sketch插件Sketch plugin 可以解决这个比较烦人的问题。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;小贴士：在设计时，尽量让Text box适配文字所占的大小，不要用过大的Textbox，并且可以设置自动对其，然后再裁剪text的宽度，如果textbox有着较多的冗余宽度，则非常容易造成其他的还原错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2阴影&quot;&gt;2、阴影&lt;/h2&gt;
+
+&lt;p&gt;不同于字体排版有着通用的设计规则，阴影的设计则因人而异。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c7f35b20984d?w=2000&amp;amp;h=1002&amp;amp;f=jpeg&amp;amp;s=65188&quot; alt=&quot;&quot; /&gt;
+例如上图的图片，iOS中的默认阴影比较大，这使得上面的例子中矩形的顶部边缘的差异最大。&lt;/p&gt;
+
+&lt;p&gt;阴影的设置也是有小技巧的，iOS和Sketch的阴影参数也有着一些差异，主要的原因是由于iOS中的CALayer中没有 “spread”的概念，尽管可以通过增大包含阴影的layer的大小来解决这个问题。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c80047c77be0?w=2000&amp;amp;h=511&amp;amp;f=jpeg&amp;amp;s=86437&quot; alt=&quot;&quot; /&gt;
+Sketch给出的设计稿与真实的应用中的阴影差异有可能是非常大的，甚至有些在Sketch上看着很不错的阴影效果，但是在设备上运行时，却几乎看不到。&lt;br /&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c818b50b3692?w=450&amp;amp;h=635&amp;amp;f=gif&amp;amp;s=60614&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;怎么解决-1&quot;&gt;怎么解决？&lt;/h3&gt;
+
+&lt;p&gt;调节阴影参数，将其还原的与设计稿一致的小技巧:把阴影的圆角降低，同时提高阴影的不透明度，代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// old  
+layer.shadowColor = UIColor.black.cgColor  
+layer.shadowOpacity = 0.2  
+layer.shadowOffset = CGSize(width: 0, height: 4)  
+layer.shadowRadius = 10  
+
+// new  
+layer.shadowColor = UIColor.black.cgColor  
+layer.shadowOpacity = 0.3  
+layer.shadowOffset = CGSize(width: 0, height: 6)  
+layer.shadowRadius = 7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;当然，随着大小、颜色以及形状的不同，参数的改变也是不一样的，这里我们仅仅需要做有限的几处改动。&lt;/p&gt;
+
+&lt;h2 id=&quot;3渐变&quot;&gt;3、渐变&lt;/h2&gt;
+
+&lt;p&gt;渐变的还原也是一个令人头痛的问题。&lt;/p&gt;
+
+&lt;p&gt;下面三个渐变图中，只有橙色（上面）和蓝色（右下角）与设计稿是有差异的。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c8a1158b648b?w=2000&amp;amp;h=1190&amp;amp;f=jpeg&amp;amp;s=134864&quot; alt=&quot;&quot; /&gt;
+在设计稿中，橙色的渐变色更加偏向于水平方向的渐变，但是在iOS中却更偏向于垂直渐变，因此整体来说，应用的颜色看起来要比设计稿中更暗。&lt;/p&gt;
+
+&lt;p&gt;这种差异在蓝色中更加明显，iOS中的渐变更偏向于垂直方向。蓝色的渐变是由三种颜色定义而成，左下角为浅蓝，中间为深蓝，右上角为粉色。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c8a763109ee6?w=450&amp;amp;h=636&amp;amp;f=gif&amp;amp;s=370193&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;怎么解决-2&quot;&gt;怎么解决？&lt;/h3&gt;
+
+&lt;p&gt;因此，在iOS中的，如果发现渐变的角度与还原的不一致，需要将起始点和终点进行调整，可以将&lt;code&gt;CAGradientLayer&lt;/code&gt;的&lt;code&gt;startPoint&lt;/code&gt;和&lt;code&gt;endPoint&lt;/code&gt;进行微调，调节设计稿与还原之间的差异。&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// old  
+layer.startPoint = CGPoint(x: 0, y: 1)  
+layer.endPoint = CGPoint(x: 1, y: 0)  
+
+// new  
+layer.startPoint = CGPoint(x: 0.2, y: 1)  
+layer.endPoint = CGPoint(x: 0.8, y: 0)  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;当然，这里其实也没有一个通用的魔法公式，都是需要亲自手工的不断调整并将差异缩小。&lt;/p&gt;
+
+&lt;p&gt;Jirka Třečák 发表了一篇很棒的文章，解释了在iOS中的渐变是如何渲染的，如果你想深入了解的话，可以认真研究下&lt;a href=&quot;https://medium.com/@JiriTrecak/as-for-the-gradients-there-actually-is-a-magic-formula-89055944b52a&quot;&gt;这篇文章&lt;/a&gt;。
+—- —&lt;/p&gt;
+
+&lt;h1 id=&quot;更多信息&quot;&gt;更多信息&lt;/h1&gt;
+
+&lt;p&gt;文中所提到的iOS与Sketch的差异，我都通过Demo的方式进行展示，包括插图中的每个例子，以及原始的Sketch文件，通过Demo,你可以更直观了解到这些差异。你可以展示给你的团队，这种方式可以更好的理解设计与开发区别，从而开发出更好的应用。&lt;/p&gt;
+
+&lt;p&gt;Demo的地址为:&lt;a href=&quot;https://github.com/nathangitter/sketch-vs-ios&quot;&gt;https://github.com/nathangitter/sketch-vs-ios&lt;/a&gt;
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/20/1637c952ce36f212?w=1393&amp;amp;h=888&amp;amp;f=jpeg&amp;amp;s=137925&quot; alt=&quot;&quot; /&gt;
+—- —&lt;/p&gt;
+
+&lt;h1 id=&quot;小贴士&quot;&gt;小贴士&lt;/h1&gt;
+
+&lt;p&gt;永远不要迷信相同的值会有着相同的结果，尽管数字相同，但其视觉表现是不同的。
+最后，每个好的设计都是在不断的迭代中产生的，开发哥哥和设计小姐姐的良好协作，也是保证高质量产品的关键。&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 22 May 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/05/22/appandsketch/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/22/appandsketch/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>饿了么和美团app中的优秀设计细节</title>
+        <description>&lt;p&gt;本文翻译自设计师Britta Cheng的文章(已获得原作者授权) 　&lt;a href=&quot;https://uxdesign.cc/what-can-we-learn-from-the-design-of-delivery-apps-in-china-e5af4675cec8?nsukey=ujMD7FNHabxiSqHCZatXlqIrT58rA7GVUQjsASS7ZOkTTs5jKaMJCF4KWzLlL1ETtzDHtW78Ydh%2BobWEYqmLhLJ2H1DmRh1EbXKRMIH%2BNcwqkdSLQI2VMQBKznQnP1ynnsi%2BNNNcPHCHmGzI00MRuULr%2BnNfACadfClHYNhlk5Oa%2BhnkYQQXUTkKgn%2F4egzuEccrUjUnR%2FBF7dn3k%2FzrjA%3D%3D&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;中美的外卖软件都有着庞大的用户数量，然而这两个国家的外卖软件在用户体验设计却有一些有趣的差异，这篇文章介绍了我认为中国的外卖软件做的好的地方。&lt;/p&gt;
+
+&lt;h1 id=&quot;总览&quot;&gt;总览&lt;/h1&gt;
+
+&lt;p&gt;目前中国的外卖行业有两大巨头&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/16369916c4e545be?w=474&amp;amp;h=263&amp;amp;f=png&amp;amp;s=41753&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;美团外卖：月均活跃用户3749万&lt;/center&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636992a8f6d860c?w=540&amp;amp;h=167&amp;amp;f=png&amp;amp;s=7729&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;center&gt;饿了么：月均活跃用户6178万&lt;/center&gt;
+
+&lt;p&gt;这两款软件都提供了按需送货服务，包括送外卖、超市商品、新鲜水果、蔬菜，非处方药、饮料、面包以及鲜花。换句话说，下载这两款app中的任意一款就相当于下载了美国的GrubHub、UberEats/DoorDash、Instacart和PostMates。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636993c3ad1ad17?w=1600&amp;amp;h=1600&amp;amp;f=png&amp;amp;s=988009&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从设计和美学角度来说，由于这些软件功能点过多，很难将其设计成一个简洁美好的应用，但他们却另辟蹊径，将应用设计成为用户提供一个简单易用，具有良好购物体验的外卖应用，我非常欣赏他们的这种做法。
+—- –&lt;/p&gt;
+
+&lt;h1 id=&quot;他们有哪些做的好的地方呢&quot;&gt;他们有哪些做的好的地方呢？&lt;/h1&gt;
+
+&lt;h2 id=&quot;1信息透明化&quot;&gt;1、信息透明化&lt;/h2&gt;
+
+&lt;p&gt;近期的一项研究发现导致用户在结账过程中放弃支付主要有以下几种原因：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;60%：额外费用太高，例如配送费、税费等；&lt;/li&gt;
+  &lt;li&gt;23%：不能直观地看见或者计算订单总费用；&lt;/li&gt;
+  &lt;li&gt;18%：配送时间太长；&lt;/li&gt;
+  &lt;li&gt;11%：认为退货政策不公平或者不满意；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;美团和饿了么对于这些问题都有自己的解决办法。他们将所有信息提前展示，确保了用户在结算页面时不会产生困惑。事实上，通过估算所有的隐藏费用并在结算前提现展示重要信息，用户会从购物的一开始就会有控制感，并且认为这个产品是可信赖的。
+&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636997ec8a547aa?w=2000&amp;amp;h=1787&amp;amp;f=jpeg&amp;amp;s=110356&quot; alt=&quot;&quot; /&gt;
+不得不承认的是，这种方式在美国是不容易做到的，因为中文相比于英语来说更加简洁高效。例如：“Limited Time Offer”占了18个字母的位置，但用中文“限时特惠”表达，只占8个字母的位置。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2即时反馈&quot;&gt;2、即时反馈&lt;/h2&gt;
+
+&lt;p&gt;在我之前的文章中，谈论了在Instacart app的购物体验，其中一个关键点是，用户不知道最低消费额是多少，并且当用户满足了最低消费额的时候，应用没有提供任何关于此的提示，但美团和饿了么都巧妙的解决了这个问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699a405227ff0?w=1080&amp;amp;h=885&amp;amp;f=gif&amp;amp;s=1103176&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;饿了么将订单的总费用放在了用户挑选商品页面的tab栏。动画以及颜色的变化可以在订单达到最低消费额时清楚地告诉用户。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699a88f8254e8?w=2000&amp;amp;h=1787&amp;amp;f=jpeg&amp;amp;s=113453&quot; alt=&quot;&quot; /&gt;
+— -&lt;/p&gt;
+
+&lt;h2 id=&quot;3无缝衔接的交互&quot;&gt;3、无缝衔接的交互&lt;/h2&gt;
+
+&lt;p&gt;记得上一次你用手机购物的时候截屏是为什么吗？通常有以下几种原因：&lt;/p&gt;
+
+&lt;p&gt;A、把截屏分享给朋友或者家人&lt;/p&gt;
+
+&lt;p&gt;B、向售后反馈问题&lt;/p&gt;
+
+&lt;p&gt;美团和饿了么则考虑到了这个细节，当用户在App内进行截图操作时，提供了额外的分享以及反馈提示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699ae22df00a4?w=2000&amp;amp;h=4626&amp;amp;f=jpeg&amp;amp;s=264162&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当用户熟悉一款app之后，他们就希望能够更高效地使用它。当用户使用app进行操作的时候，他们希望能够使用地更快，并希望app能够及时响应他们的操作。上面提到的操作在这款app的其他地方也可以找到，但是通过与截屏操作相结合的交互方式可以为用户创造流畅的用户体验，并最大化地提高了用户的使用效率。
+—— —&lt;/p&gt;
+
+&lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+
+&lt;p&gt;许多产品设计师认为中国的app功能太多，看起来也很丑。巧的是，最近我读了Jason Brush的一篇关于亚马逊设计理论的文章：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;亚马逊的成功让我们知道了一条设计界难以接受的理论：成功的设计未必是好看的。当然，随着以研究为导向的设计被广泛接受，认为设计仅仅是美学实践的观念很早就被揭穿了。然而，接受一个精心设计的用户体验可能并不好看对人们来说依然是一个挑战。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在我看来，美团外卖和饿了么就是用户体验很棒，但看起来不美观的典型例子。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 May 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/05/16/eledesign/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/16/eledesign/</guid>
+        
+        <category>Design</category>
+        
+        
+      </item>
     
       <item>
         <title>7个小技巧大幅度提升UI动效品质新</title>
@@ -120,8 +841,8 @@
 &lt;p&gt;当用户需要做出一些重要的操作时，试着将这些操作的按钮以动画的方式展现，以吸引用户的注意力。可以做一些简单细微的动画并逐渐增加强度，并根据行动的重要性改变按钮的大小、颜色和动画的速度。记住只在最重要的操作上使用动画，因为你用的动画越多，它就变得越不重要并且会打扰到用户。&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 May 2018 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/</guid>
+        <link>http://localhost:4000/2018/05/12/seventips/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/12/seventips/</guid>
         
         
       </item>

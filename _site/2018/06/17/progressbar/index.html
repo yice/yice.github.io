@@ -10,7 +10,7 @@
     <meta name="keywords"  content="设计">
     <meta name="theme-color" content="#000000">
     
-    <title>7个小技巧大幅度提升UI动效品质新 - Yice's Design Blog</title>
+    <title>🐌🐌设计趣味性进度条，让等待不再枯燥 - Yice's Design Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2018/05/12/upgrading-eleme-to-pwa-copy/">
+    <link rel="canonical" href="http://localhost:4000/2018/06/17/progressbar/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -170,13 +170,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/#Design" title="Design">Design</a>
+                        
                     </div>
-                    <h1>7个小技巧大幅度提升UI动效品质新</h1>
+                    <h1>🐌🐌设计趣味性进度条，让等待不再枯燥</h1>
                     
                     
                     <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Yice on May 12, 2018</span>
+                    <span class="meta">Posted by Yice on June 17, 2018</span>
                 </div>
             </div>
         </div>
@@ -197,119 +199,90 @@
                 <!-- Multi-Lingual -->
                 
 
-				<h1 id="7个小技巧大幅度提升ui动效品质">7个小技巧大幅度提升UI动效品质</h1>
+				<p>本文翻译自Shashank Sahay的文章，<a href="https://medium.muz.li/designing-search-for-mobile-apps-ab2593e9e413">查看原文</a>。</p>
 
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586f3c7197bee?w=560&amp;h=420&amp;f=jpeg&amp;s=70528" alt="" />
- 优秀的动画，对于提升UI的逼格非常重要，在大多数情况下，针对动画进行合理的调整，就可以让你的UI变得更加出色，好的交互设计，能够展示状态之间的连续性，以及不同UI元素的的关系，同时，能够使得用户的注意力聚焦在重要的地方。
-所有的交互都是用体验版本的InVision Studio做出来的，这些都可以在官网获取到。</p>
+<p>这篇文章将探索设计搜索功能的几种不同方式，以及这样设计的原因。</p>
 
-<hr />
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/1/16453e827beee07e?w=1920&amp;h=720&amp;f=png&amp;s=373132" alt="" /></p>
 
-<h2 id="将选项卡种的内容做成可滑动的">将选项卡种的内容做成可滑动的</h2>
+<p>在这篇文章中，我将讨论两种最流行的设计搜索功能的方式：登陆页面上的搜索框和导航栏上的搜索选项，并探索如何为你的App从中选择一个合适的搜索方式。</p>
+<h1 id="app中的搜索功能">App中的搜索功能</h1>
 
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/16358607f0b570f5?w=1440&amp;h=810&amp;f=gif&amp;s=1155306" alt="" />
-左图的内容淡入淡出；右图的内容随着标签一起滑动。</p>
-<ul>
-  <li>好的动效将内容从一个标签页淡出，再淡入到另一个标签页；</li>
-  <li>优秀的动效让页面内容在不同标签之间移动，能够展现过度时的连续性。</li>
-</ul>
+<p>我们日常使用的大多数app都有搜索功能，这些app设计搜索功能的方式则千差万别。但是，为什么需要对同一个功能做不同的设计呢？有没有最优的选择呢？让我们来看一看。</p>
 
-<p>当你设计选项卡或者弹出菜单这种交互时，试着将内容的位置与打开它的动作相关联。通过这种方式，你可以将你的内容和内容的位置都做成可视动画。做这种页面时，也加上一个可以在不同内容之间切换的滑动手势。</p>
+<h2 id="主页面上的搜索栏">主页面上的搜索栏</h2>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/1/16453c20526000f4?w=2000&amp;h=836&amp;f=png&amp;s=464582" alt="" />
+这几个常用的app都把搜索栏设计在了主页面上，这种设计的优点是设计栏很容易被发现，因为大部分时间它都在页面的最顶端。</p>
 
-<hr />
+<p>这种顶部的搜索框更适用于用户有明确的搜索意图的情况，搜索的结果将取决于用户输入的关键字。</p>
 
-<h2 id="关联卡片上的相关元素">关联卡片上的相关元素</h2>
+<p>（这个理念同样适用于将搜索icon放在页面右上角的app，我曾经将这两种方式放在一起进行比较，发现它们的易用、和可获得性、甚至连点击次数都十分相似。）</p>
 
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586553c562e26?w=1440&amp;h=810&amp;f=gif&amp;s=381277" alt="" /></p>
+<h2 id="将搜索标签放在导航栏中">将搜索标签放在导航栏中</h2>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/1/16453c17297a7d5a?w=2000&amp;h=836&amp;f=png&amp;s=616621" alt="" /></p>
 
-<p>左边的卡片打开一个新页面是滑上来的；  右边则是扩展了卡片并使其占满屏幕。</p>
+<p>这些app将搜索功能作为一个标签放在了导航栏中。这种方式中，搜索功能没有上一种方式那样容易被发现，但是它们很容易被访问，因为用户用拇指点击就可以轻松访问。</p>
 
-<ul>
-  <li>好的动画展示信息详情页时使用左滑或者上划的方式；</li>
-  <li>优秀的动画会在有共同信息的两种状态之间建立联系。</li>
-</ul>
+<p>这种方式中，搜索功能有一个单独的页面，搜索页在顶部有一个搜索框，页面的其余地方是一些数据，这些数据既可以帮助用户搜索，也可以帮助用户探索平台上的内容。这种方式适用于没有明确搜索意图的用户进行探索性搜索。
+——– ——</p>
+<h1 id="使用搜索框还是搜索页面">使用搜索框还是搜索页面？</h1>
 
-<p>当给两种不同的状态的过渡做动画时，看看这两种状态之间有没有共有的元素，如果有则可以在动画中体现两者的联系。在InVision Studio中，两个相关联的页面有重复的元素时，当你创建一个Motion的时候，系统会自动在两个元素之间创建关联动画。这让创建动画原型变得轻而易举。</p>
+<p>这两种搜索功能的设计方式服务于不同的用户，使用哪种设计方式取决于是哪种类型的平台以及平台提供什么内容。</p>
 
-<hr />
-
-<h2 id="在内容中使用瀑布流效果">在内容中使用瀑布流效果</h2>
-
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586737f6ac987?w=1440&amp;h=810&amp;f=gif&amp;s=803074" alt="" /></p>
-
-<p>左边的卡片通过滑动和淡入的效果显示; 
-右边的卡片在同样动画的基础上，让每个卡片都有短时间的延迟。</p>
+<h2 id="使用顶部搜索框的情况">使用顶部搜索框的情况</h2>
 
 <ul>
-  <li>当卡片进入屏幕时，好的动画改变它的位置和透明度；</li>
-  <li>优秀的动画则会快速蔓延每组元素。</li>
+  <li>
+    <p>用户打开app的主要目的是搜索一些东西。例如：Google地图、优步或者 Zomato。大多数时间用户打开这些app都希望搜索一个地点、餐厅或者菜肴。</p>
+  </li>
+  <li>
+    <p>用户有明确的搜索意图，就像在Facebook中，用户通常使用搜索功能搜索其它用户或页面，即使有时他们不是很确定它们是怎样拼写的。类似Facebook这种平台，用户对他们想要搜索的信息有很清晰的了解，即使他们可能不太了解，平台也无法帮助他们。</p>
+  </li>
 </ul>
 
-<p>要达到瀑布流的效果，可以将每个动画元素都保持相同的动画速度以及持续时长，并对其按序设置一定的延时。要将瀑布流的形式应用在组里，不能应用在单独的元素上。保持动画的快速简介，谷歌的提醒功能里，每个元素出现的间隔不超过20毫秒。点击动画里的瀑布流形式查看更多案例。</p>
-
-<hr />
-
-<h2 id="让内容推开其他元素">让内容推开其他元素</h2>
-
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/1635868386af47d6?w=1440&amp;h=810&amp;f=gif&amp;s=244641" alt="" /></p>
-
-<p>左边的动画中，动画效果直接出线在其他内容上面。右边的动画中，随着动画的扩大，其他内容被推开了。</p>
+<h2 id="在底部导航栏添加搜索标签的情况">在底部导航栏添加搜索标签的情况</h2>
 
 <ul>
-  <li>好的动画直接在画面中移动和展示元素；</li>
-  <li>优秀的动画则会展示出动画对其周围元素的影响。</li>
+  <li>
+    <p>你希望能够鼓励用户探索和发现平台上的新内容，从而提高用户的参与度。例如：Instagram and Twitter这两个平台都希望用户可以在app上停留更多的时间，因此它们在你的搜索范围之外，提供了个性化的的内容，帮助你发现你可能感兴趣的新用户和新内容。</p>
+  </li>
+  <li>
+    <p>用户不确定他们在寻找什么时，app可以指导用户发现他们想要的内容。例如：Netflix and Uber Eats，这两个app允许用户通过流派和菜系去探索app，这适用于这样的用户，他们知道自己想看一档喜剧节目，但不确定应该看哪一个。
+—— —–</p>
+    <h1 id="airbnb是怎么做的">Airbnb是怎么做的？</h1>
+  </li>
 </ul>
 
-<p>让内容与周围的环境相互动。这意味着让内容吸引或者赶走它周围的元素。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/1/16453c38b50ef530?w=488&amp;h=836&amp;f=jpeg&amp;s=104349" alt="" />
+Airbnb混合使用了这两种搜索功能的设计方式，在主页面上方有搜索栏，并且页面下方的的导航栏也有搜索按钮。Airbnb肯定对此有着一定的考虑，通过这种方式，他可以同时顾及到两类用户：有着明确搜索意图的用户，以及随便逛逛还在想要去哪里的用户。
+—– —</p>
 
-<hr />
+<h1 id="结论">结论</h1>
+<p>两种不同的设计方案都各有优劣，都有各自不同的适用场景，通过上面的例子，我们可以发现，有两个因素决定我们采用何种搜索方案——用户的使用意图以及产品能够为用户提供何种功能。</p>
 
-<h2 id="让菜单从按钮中出现">让菜单从按钮中出现</h2>
+<p><code>欢迎关注微信公众号：IceyTalk   
+[原文链接](https://mp.weixin.qq.com/s?__biz=MzU1OTY0NzIxNQ==&amp;tempkey=OTYzX0hSdTN4QVY5djA1NmFWYmpFbkNXamtOWTdaRE5FTk13X3lkM1hRQm5RdHlTdk85WTZlQkY4Q2pYUXQzQ1N1QUExV3JVSkY0aWRDdHNjWC1wV19SQlpuSlMyRWMxQ0FBRW1TNnpoSklkbE5YaW9Jc2dDMDJOR01HRFRYSi02SU9ya0twMVpQU05iQkxXZWwxelcwS3ktQlBBTVFPWjAzMjU4Qk9SSWd%2Bfg%3D%3D&amp;chksm=7c1551974b62d881166b3a7a2736e3dbedd6c271bb3c1ee3304fe4d6f34f6c1d10482d6df0f7#rd)  </code></p>
 
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/16358697c3ff069d?w=1440&amp;h=810&amp;f=gif&amp;s=307263" alt="" /></p>
-
-<p>左图中菜单直接从下面滑入；右图的菜单则从打开它的按钮中扩展出来。</p>
-
-<ul>
-  <li>好的动画菜单出现的方向与打开它的按钮的方向保持一致；</li>
-  <li>优秀的动画菜单从打开它的按钮中展开。</li>
-</ul>
-
-<hr />
-
-<h2 id="用按钮展示不同的状态">用按钮展示不同的状态</h2>
-
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586adc1926bb6?w=1440&amp;h=810&amp;f=gif&amp;s=1414382" alt="" /></p>
-
-<p>左边的动画使用文字表明状态；右边的动画则直接使用按钮展示不同状态。</p>
-
-<ul>
-  <li>好的交互将活动状态用文字方式展示在按钮旁边；</li>
-  <li>优秀的交互则直接用按钮展示不同状态。</li>
-</ul>
-
-<p>试着用按钮本身展示不同状态。例如：用旋转菊花或者加载动画代替CTA；或者在按钮背景中加一个动画表明进程。具体方式取决于你，核心就是利用好已有的用户已经与之交互的空间。如果你使用按钮颜色去确认成功状态，对于用户来说就是一个大彩蛋。</p>
-
-<hr />
-
-<h2 id="将用户的注意力引导到重要的东西上">将用户的注意力引导到重要的东西上</h2>
-
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/13/163586c953d6851d?w=1440&amp;h=810&amp;f=gif&amp;s=612310" alt="" /></p>
-
-<p>左图中的案例使用颜色和位置让元素突出显示；右图中则使用了一个简单的小动画吸引用户的注意力。</p>
-
-<ul>
-  <li>好的设计使用颜色、尺寸和位置，来突出需要格外引起用户注意并触发用户行为的重点内容；</li>
-  <li>优秀的设计使用动画引导用户将注意力放在重要的地方，并且不会打扰到用户。</li>
-</ul>
-
-<p>当用户需要做出一些重要的操作时，试着将这些操作的按钮以动画的方式展现，以吸引用户的注意力。可以做一些简单细微的动画并逐渐增加强度，并根据行动的重要性改变按钮的大小、颜色和动画的速度。记住只在最重要的操作上使用动画，因为你用的动画越多，它就变得越不重要并且会打扰到用户。</p>
 
 
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2018/06/11/googletranslate/" data-toggle="tooltip" data-placement="top" title="谷歌翻译的UI设计">
+                        Previous<br>
+                        <span>谷歌翻译的UI设计</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/07/01/mobilesearch/" data-toggle="tooltip" data-placement="top" title="探索移动端的搜索设计">
+                        Next<br>
+                        <span>探索移动端的搜索设计</span>
+                        </a>
+                    </li>
                     
                 </ul>
 
@@ -334,6 +307,18 @@
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+        				
+                            
+                				<a href="/tags/#Design" title="Design" rel="8">
+                                    Design
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#After Effects" title="After Effects" rel="2">
+                                    After Effects
+                                </a>
+                            
         				
         			</div>
                 </section>

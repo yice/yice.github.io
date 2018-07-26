@@ -10,7 +10,7 @@
     <meta name="keywords"  content="设计">
     <meta name="theme-color" content="#000000">
     
-    <title>About - Yice's Design Blog</title>
+    <title>如何用AE做出App store中的卡片动态效果 - Yice's Design Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
+    <link rel="canonical" href="http://localhost:4000/2018/07/23/appcard/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -149,156 +149,227 @@
 </script>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/blog-man-bg.jpg')">
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/test-index-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/test-index-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is Yice.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Design" title="Design">Design</a>
+                        
+                        <a class="tag" href="/tags/#After Effects" title="After Effects">After Effects</a>
+                        
+                    </div>
+                    <h1>如何用AE做出App store中的卡片动态效果</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by Yice on July 23, 2018</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<p>阅读此文大约需要7分钟 <br />
+本文首发于微信公众号，<a href="https://mp.weixin.qq.com/s/Nx3nhmSEYh2frC2RfReVoA">原文链接</a></p>
+
+<p>动画效果会讲故事，动效不仅仅是为了愉悦用户，更是为了帮助理解当前操作进展，帮助提高app的使用效率。当动效制作非常成熟时，看起来应当是非常自然的。</p>
+
+<p>App中随处可见各种各样绚丽的动态效果，从页面跳转到加载进度指示，从状态反馈到下拉刷新。但动效的使用应当自然流畅，过多花哨或者不适当的动效反而会给用户体验带来负面影响。</p>
+
+<hr />
+
+<h1 id="一app-store的全新改版">一、App store的全新改版</h1>
+
+<p>苹果作为用户体验界的标杆，在最新的iOS11中，对界面及动效做了很多更新迭代。其中最明显的就是App store的全新改版。改版后的应用每日会根据最新时事，精选出小众精选、游戏文化、独立佳作等应用，用卡片的方式展示出来。作为第一级 Tab，巨大、显眼的卡片式设计意味着信息更为聚焦。</p>
+
+<div align="center">  
+&lt;img src="https://user-gold-cdn.xitu.io/2018/7/19/164b167e62f7abf5?" width=300 height=534 align=center /&gt;         
+</div>
+
+<p>首页的今日推荐页还使用了非常漂亮的转场效果。转场动效是十分重要的一种动效，它的作用是引导用户，让用户更好地理解页面跳转，知道自己身处何方。App store的设计者为了避免卡片展示页和卡片详情页之间的过度过于生硬，利用动效填补了页面跳转的中间过程，使体验更加流畅自然。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b179df8c895a0?w=300&amp;h=534&amp;f=gif&amp;s=1792606" alt="" /></p>
+
+<hr />
+
+<h1 id="二小细节">二、小细节</h1>
+
+<p>App store的卡片页和详情页之间的转场在AE中用到的功能并不多，列举出来就是放大缩小、位移、改变透明度、遮罩、曲线等基础功能。而相对于普通的转场动效来说，它的动效更加自然流畅的原因是它注重到了三个细节：</p>
+
+<ul>
+  <li>
+    <p>回弹</p>
+  </li>
+  <li>
+    <p>阴影</p>
+  </li>
+  <li>
+    <p>卡片展开时尺寸不变</p>
+  </li>
+</ul>
+
+<h2 id="1回弹">1、回弹</h2>
+
+<p>回弹即是在原有过渡效果的基础上，借用符合物理规则的轻微颤动来强化用户体验，让动效更加生动。举个例子：当你想让一个球从屏幕最上方落下时，它在停止之前要有几次强度逐渐减弱的回弹才符合物理规律；没有回弹的动画看起来则会非常生硬。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b17bc52769185?w=750&amp;h=600&amp;f=gif&amp;s=161017" alt="" /></p>
+
+<p>iOS动效最大的亮点在于，很多地方都有回弹的效果，卡片展开与收起的效果也不例外。</p>
+
+<h3 id="实现方式">实现方式</h3>
+
+<p>以关闭按钮的回弹为例：</p>
+
+<p><strong>step1:</strong> 用钢笔工具勾出一条路径，该路径需要弯曲以制作回弹的效果；</p>
+
+<p><strong>step2:</strong> 选中路径的path属性复制，在要移动的物体的position属性上粘贴，物体的中心点就会沿着路径移动，从而产生回弹的效果。</p>
+
+<p><strong>step3:</strong> 调整位置运动路径的曲线，使运动更加自然。（关于曲线调节可以查看这篇文章：<a href="https://juejin.im/post/5b4871836fb9a04f8f378f2c">彻底搞懂AE曲线，让设计中的动效更加有趣</a>）</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b181be130f84c?w=2800&amp;h=1754&amp;f=jpeg&amp;s=549388" alt="" /></p>
+
+<blockquote>
+  <p>小tips： <br />
+1、卡片与它里面的字、关闭按钮是分离的，分别处于单独的图层上面，因此要为它们创建不同的移动路径。   <br />
+2、回弹也可以用表达式制作，更加方便快捷。但这里的回弹是物体弹出去以后往下移动，用表达式达不到想要的效果，因此我用了绘制路径的方法。回弹表达式可以参考这篇文章：<a href="http://www.ui.cn/detail/35851.html">AE表达式：回弹。</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="2阴影">2、阴影</h2>
+
+<p>阴影可以让用户理解元素的层次，让他们知道两个对象并不在同一高度，不是同一个层级。同时阴影也暗示了用户某个元素其实是可点击的。</p>
+
+<p>App store中的每个卡片背后都使用了微妙的灰色弥散阴影，让卡片的细节更加丰富，并暗示用户卡片是可交互的。如果去掉阴影，卡片就失去了层次感，也没有了明确的交互引导性，很容易让用户误解为不可点击。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b184b6b80f279?w=651&amp;h=578&amp;f=jpeg&amp;s=205144" alt="" /></p>
+
+<p>当卡片展开时，阴影也会随之扩散变大，透明度降低，与现实中物体扩大时阴影的变化方式相同。这样的设计可以给用户较高的感知度，能够更加清楚地传递信息。</p>
+
+<h3 id="实现方式-1">实现方式</h3>
+
+<p><strong>step1:</strong> 卡片下面新建一个图层，创建一个与卡片形状大小相同的灰色圆角长方形，放在卡片正下方；</p>
+
+<p><strong>step2:</strong> 将圆角长方形向下移动5像素，使用高斯模糊并降低其透明度，做成阴影图层；</p>
+
+<p><strong>step3:</strong> 卡片展开时，扩大阴影图层，并继续降低其透明度；</p>
+
+<p><strong>step4:</strong> 卡片收回时，将阴影图层回归到原来的大小和透明度。</p>
+
+<hr />
+
+<h2 id="3卡片展开时尺寸不变">3、卡片展开时尺寸不变</h2>
+
+<p>这也是iOS卡片的特色之一，仔细观察就会发现，当卡片详情页展开时，卡片的大小其实是没有发生变化的。这样做的好处是，在首页的卡片展示中不会由于图片的放大缩小而丢失细节，用户在首页就可以很清楚的看到推广banner的每个细节。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b179df8c895a0?w=300&amp;h=534&amp;f=gif&amp;s=1792606" alt="" /></p>
+
+<h3 id="实现方式-2">实现方式</h3>
+
+<p><strong>step1:</strong> 在卡片上加一个圆角长方形遮罩，使卡片只露出遮罩的部分；</p>
+
+<p><strong>step2:</strong> 点击卡片展示卡片详情页时，放大遮罩，使卡片全部露出来。</p>
+
+<p><strong>step3:</strong> 卡片收起时，再将遮罩缩小到原来的大小。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b18555180e583?w=2800&amp;h=1754&amp;f=jpeg&amp;s=574014" alt="" /></p>
+
+<hr />
+
+<p>以上是我对App store中卡片动效的理解，相信每个人对它都有不同的理解，都可以在AE中用不同的方式做出来，具体怎么操作不重要，重要的是如何对一个动效进行解析和思考，并总结方法用在自己的设计上。</p>
+
+<p>我已经将AE工程源文件上传到百度网盘，下载就可以看到我每一步具体的操作步骤～ <br />
+<a href="https://pan.baidu.com/s/1S-OpFH6SsJ2flD5Zfe8PSQ">点击下载</a> <br />
+密码: dccm</p>
+
+<p>对于这篇文章中的动效有其他更好的方法也欢迎和我留言讨论哦，写教程不易，喜欢就点个赞吧～</p>
+
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/07/13/aecurve/" data-toggle="tooltip" data-placement="top" title="彻底搞懂AE曲线，让设计中的动效更加有趣">
+                        Previous<br>
+                        <span>彻底搞懂AE曲线，让设计中的动效更加有趣</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			<!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    
-    <blockquote>
-  <p>。。。</p>
-</blockquote>
-
-<p>Hey，我是Yice  剑侠情缘玩的停不下来，是兄弟就一起来</p>
-
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    
-    
-<blockquote>
-  <p>Yice.</p>
-</blockquote>
-
-
-</div>
-
-
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+        				
                             
-                                <a href="/tags/#Design" title="Design" rel="8">
+                				<a href="/tags/#Design" title="Design" rel="8">
                                     Design
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#After Effects" title="After Effects" rel="2">
+                				<a href="/tags/#After Effects" title="After Effects" rel="2">
                                     After Effects
                                 </a>
                             
-                        
-                    </div>
+        				
+        			</div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <img src="/img/yice-ava.jpg" />
-                        
-                        
-                            <p>Live <br> Life & Design</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            <li>
-                                <a href="https://twitter.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="http://weibo.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -309,10 +380,52 @@
                     
                 </ul>
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
     <!-- Footer -->
@@ -468,55 +581,6 @@
 
 
 <!-- Multi-Lingual -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    // Changes at v1.7.2: change the language flag from hash-basing to in-memory basing
-    // due to its confliction with catalog anchors.
-    // window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(_hash){
-        var _hash = _hash || window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-        }
-        // interop with catalog 
-        if ("") generateCatalog(".catalog-body");
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            _hash = "#zh"
-        }else{
-            _hash = "#en"
-        }
-        _render(_hash)
-    }
-
-    // init
-    _render();
-</script>
 
 
 

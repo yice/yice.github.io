@@ -10,7 +10,7 @@
     <meta name="keywords"  content="设计">
     <meta name="theme-color" content="#000000">
     
-    <title>About - Yice's Design Blog</title>
+    <title>饿了么和美团app中的优秀设计细节 - Yice's Design Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
+    <link rel="canonical" href="http://localhost:4000/2018/05/16/eledesign/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -149,156 +149,194 @@
 </script>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/blog-man-bg.jpg')">
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/test-index-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/test-index-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Hey, this is Yice.</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Design" title="Design">Design</a>
+                        
+                    </div>
+                    <h1>饿了么和美团app中的优秀设计细节</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by Yice on May 16, 2018</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<p>本文翻译自设计师Britta Cheng的文章(已获得原作者授权) 　<a href="https://uxdesign.cc/what-can-we-learn-from-the-design-of-delivery-apps-in-china-e5af4675cec8?nsukey=ujMD7FNHabxiSqHCZatXlqIrT58rA7GVUQjsASS7ZOkTTs5jKaMJCF4KWzLlL1ETtzDHtW78Ydh%2BobWEYqmLhLJ2H1DmRh1EbXKRMIH%2BNcwqkdSLQI2VMQBKznQnP1ynnsi%2BNNNcPHCHmGzI00MRuULr%2BnNfACadfClHYNhlk5Oa%2BhnkYQQXUTkKgn%2F4egzuEccrUjUnR%2FBF7dn3k%2FzrjA%3D%3D">原文链接</a></p>
+
+<p>中美的外卖软件都有着庞大的用户数量，然而这两个国家的外卖软件在用户体验设计却有一些有趣的差异，这篇文章介绍了我认为中国的外卖软件做的好的地方。</p>
+
+<h1 id="总览">总览</h1>
+
+<p>目前中国的外卖行业有两大巨头</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/16369916c4e545be?w=474&amp;h=263&amp;f=png&amp;s=41753" alt="" /></p>
+
+<center>美团外卖：月均活跃用户3749万</center>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/1636992a8f6d860c?w=540&amp;h=167&amp;f=png&amp;s=7729" alt="" /></p>
+
+<center>饿了么：月均活跃用户6178万</center>
+
+<p>这两款软件都提供了按需送货服务，包括送外卖、超市商品、新鲜水果、蔬菜，非处方药、饮料、面包以及鲜花。换句话说，下载这两款app中的任意一款就相当于下载了美国的GrubHub、UberEats/DoorDash、Instacart和PostMates。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/1636993c3ad1ad17?w=1600&amp;h=1600&amp;f=png&amp;s=988009" alt="" /></p>
+
+<p>从设计和美学角度来说，由于这些软件功能点过多，很难将其设计成一个简洁美好的应用，但他们却另辟蹊径，将应用设计成为用户提供一个简单易用，具有良好购物体验的外卖应用，我非常欣赏他们的这种做法。
+—- –</p>
+
+<h1 id="他们有哪些做的好的地方呢">他们有哪些做的好的地方呢？</h1>
+
+<h2 id="1信息透明化">1、信息透明化</h2>
+
+<p>近期的一项研究发现导致用户在结账过程中放弃支付主要有以下几种原因：</p>
+
+<ul>
+  <li>60%：额外费用太高，例如配送费、税费等；</li>
+  <li>23%：不能直观地看见或者计算订单总费用；</li>
+  <li>18%：配送时间太长；</li>
+  <li>11%：认为退货政策不公平或者不满意；</li>
+</ul>
+
+<p>美团和饿了么对于这些问题都有自己的解决办法。他们将所有信息提前展示，确保了用户在结算页面时不会产生困惑。事实上，通过估算所有的隐藏费用并在结算前提现展示重要信息，用户会从购物的一开始就会有控制感，并且认为这个产品是可信赖的。
+<img src="https://user-gold-cdn.xitu.io/2018/5/16/1636997ec8a547aa?w=2000&amp;h=1787&amp;f=jpeg&amp;s=110356" alt="" />
+不得不承认的是，这种方式在美国是不容易做到的，因为中文相比于英语来说更加简洁高效。例如：“Limited Time Offer”占了18个字母的位置，但用中文“限时特惠”表达，只占8个字母的位置。</p>
+
+<hr />
+
+<h2 id="2即时反馈">2、即时反馈</h2>
+
+<p>在我之前的文章中，谈论了在Instacart app的购物体验，其中一个关键点是，用户不知道最低消费额是多少，并且当用户满足了最低消费额的时候，应用没有提供任何关于此的提示，但美团和饿了么都巧妙的解决了这个问题。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/163699a405227ff0?w=1080&amp;h=885&amp;f=gif&amp;s=1103176" alt="" /></p>
+
+<p>饿了么将订单的总费用放在了用户挑选商品页面的tab栏。动画以及颜色的变化可以在订单达到最低消费额时清楚地告诉用户。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/163699a88f8254e8?w=2000&amp;h=1787&amp;f=jpeg&amp;s=113453" alt="" />
+— -</p>
+
+<h2 id="3无缝衔接的交互">3、无缝衔接的交互</h2>
+
+<p>记得上一次你用手机购物的时候截屏是为什么吗？通常有以下几种原因：</p>
+
+<p>A、把截屏分享给朋友或者家人</p>
+
+<p>B、向售后反馈问题</p>
+
+<p>美团和饿了么则考虑到了这个细节，当用户在App内进行截图操作时，提供了额外的分享以及反馈提示。</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/163699ae22df00a4?w=2000&amp;h=4626&amp;f=jpeg&amp;s=264162" alt="" /></p>
+
+<p>当用户熟悉一款app之后，他们就希望能够更高效地使用它。当用户使用app进行操作的时候，他们希望能够使用地更快，并希望app能够及时响应他们的操作。上面提到的操作在这款app的其他地方也可以找到，但是通过与截屏操作相结合的交互方式可以为用户创造流畅的用户体验，并最大化地提高了用户的使用效率。
+—— —</p>
+
+<h1 id="总结">总结</h1>
+
+<p>许多产品设计师认为中国的app功能太多，看起来也很丑。巧的是，最近我读了Jason Brush的一篇关于亚马逊设计理论的文章：</p>
+
+<blockquote>
+  <p>亚马逊的成功让我们知道了一条设计界难以接受的理论：成功的设计未必是好看的。当然，随着以研究为导向的设计被广泛接受，认为设计仅仅是美学实践的观念很早就被揭穿了。然而，接受一个精心设计的用户体验可能并不好看对人们来说依然是一个挑战。</p>
+</blockquote>
+
+<p>在我看来，美团外卖和饿了么就是用户体验很棒，但看起来不美观的典型例子。</p>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/05/12/seventips/" data-toggle="tooltip" data-placement="top" title="7个小技巧大幅度提升UI动效品质新">
+                        Previous<br>
+                        <span>7个小技巧大幅度提升UI动效品质新</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/05/22/appandsketch/" data-toggle="tooltip" data-placement="top" title="为什么上线的App没有Sketch里的设计稿好看？">
+                        Next<br>
+                        <span>为什么上线的App没有Sketch里的设计稿好看？</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			<!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    
-    <blockquote>
-  <p>。。。</p>
-</blockquote>
-
-<p>Hey，我是Yice  剑侠情缘玩的停不下来，是兄弟就一起来</p>
-
-</div>
-
-<!-- English Version -->
-<div class="en post-container">
-    
-    
-<blockquote>
-  <p>Yice.</p>
-</blockquote>
-
-
-</div>
-
-
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+        				
                             
-                                <a href="/tags/#Design" title="Design" rel="8">
+                				<a href="/tags/#Design" title="Design" rel="8">
                                     Design
                                 </a>
                             
-                        
+        				
                             
-                                <a href="/tags/#After Effects" title="After Effects" rel="2">
+                				<a href="/tags/#After Effects" title="After Effects" rel="2">
                                     After Effects
                                 </a>
                             
-                        
-                    </div>
+        				
+        			</div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <img src="/img/yice-ava.jpg" />
-                        
-                        
-                            <p>Live <br> Life & Design</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            <li>
-                                <a href="https://twitter.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="http://weibo.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/huxpro">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -309,10 +347,52 @@
                     
                 </ul>
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
     <!-- Footer -->
@@ -468,55 +548,6 @@
 
 
 <!-- Multi-Lingual -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    // Changes at v1.7.2: change the language flag from hash-basing to in-memory basing
-    // due to its confliction with catalog anchors.
-    // window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(_hash){
-        var _hash = _hash || window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-        }
-        // interop with catalog 
-        if ("") generateCatalog(".catalog-body");
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            _hash = "#zh"
-        }else{
-            _hash = "#en"
-        }
-        _render(_hash)
-    }
-
-    // init
-    _render();
-</script>
 
 
 

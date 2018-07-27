@@ -5,9 +5,25 @@
     <description>关于摄影与设计 | Yice，Photograhper &amp; Mobile Lover，UX Designer | Live&amp;Life&amp;Design。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 27 Jul 2018 01:18:08 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Jul 2018 01:18:08 +0800</lastBuildDate>
+    <pubDate>Sat, 28 Jul 2018 01:15:17 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Jul 2018 01:15:17 +0800</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>《不思议迷宫》游戏社区设计</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/gumballs.jpg&quot; alt=&quot;Portfolio&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/27/gumballs-portfolio/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/27/gumballs-portfolio/</guid>
+        
+        <category>Design</category>
+        
+        <category>Portfolio</category>
+        
+        
+      </item>
     
       <item>
         <title>如何用AE做出App store中的卡片动态效果</title>

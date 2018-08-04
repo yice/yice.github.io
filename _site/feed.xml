@@ -5,8 +5,8 @@
     <description>关于摄影与设计 | Yice，Photograhper &amp; Mobile Lover，UX Designer | Live&amp;Life&amp;Design。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 04 Aug 2018 15:56:02 +0800</pubDate>
-    <lastBuildDate>Sat, 04 Aug 2018 15:56:02 +0800</lastBuildDate>
+    <pubDate>Sat, 04 Aug 2018 15:58:34 +0800</pubDate>
+    <lastBuildDate>Sat, 04 Aug 2018 15:58:34 +0800</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -17,6 +17,38 @@
         <pubDate>Fri, 27 Jul 2018 20:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/27/gumballs-portfolio/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/27/gumballs-portfolio/</guid>
+        
+        <category>Design</category>
+        
+        <category>Portfolio</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Colorful - 图片调色应用设计</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/colorful/1background.jpg&quot; alt=&quot;1background&quot; /&gt;&lt;img src=&quot;/img/colorful/2visual.jpg&quot; alt=&quot;2visual&quot; /&gt;&lt;img src=&quot;/img/colorful/3feature1.jpg&quot; alt=&quot;3feature1&quot; /&gt;&lt;img src=&quot;/img/colorful/3feature2.jpg&quot; alt=&quot;3feature2&quot; /&gt;&lt;img src=&quot;/img/colorful/4customizefilter.jpg&quot; alt=&quot;4customizefilter&quot; /&gt;&lt;img src=&quot;/img/colorful/5showcase.jpg&quot; alt=&quot;5showcase&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/27/colorful-portfolio/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/27/colorful-portfolio/</guid>
+        
+        <category>Design</category>
+        
+        <category>Portfolio</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>《不思议迷宫》游戏社区设计</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/img/gumballs.jpg&quot; alt=&quot;Portfolio&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 26 Jul 2018 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/26/gumballs-portfolio/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/26/gumballs-portfolio/</guid>
         
         <category>Design</category>
         
@@ -653,212 +685,6 @@ layer.endPoint = CGPoint(x: 0.8, y: 0)
         <guid isPermaLink="true">http://localhost:4000/2018/05/22/appandsketch/</guid>
         
         <category>Design</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>饿了么和美团app中的优秀设计细节</title>
-        <description>&lt;p&gt;本文翻译自设计师Britta Cheng的文章(已获得原作者授权) 　&lt;a href=&quot;https://uxdesign.cc/what-can-we-learn-from-the-design-of-delivery-apps-in-china-e5af4675cec8?nsukey=ujMD7FNHabxiSqHCZatXlqIrT58rA7GVUQjsASS7ZOkTTs5jKaMJCF4KWzLlL1ETtzDHtW78Ydh%2BobWEYqmLhLJ2H1DmRh1EbXKRMIH%2BNcwqkdSLQI2VMQBKznQnP1ynnsi%2BNNNcPHCHmGzI00MRuULr%2BnNfACadfClHYNhlk5Oa%2BhnkYQQXUTkKgn%2F4egzuEccrUjUnR%2FBF7dn3k%2FzrjA%3D%3D&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;中美的外卖软件都有着庞大的用户数量，然而这两个国家的外卖软件在用户体验设计却有一些有趣的差异，这篇文章介绍了我认为中国的外卖软件做的好的地方。&lt;/p&gt;
-
-&lt;h1 id=&quot;总览&quot;&gt;总览&lt;/h1&gt;
-
-&lt;p&gt;目前中国的外卖行业有两大巨头&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/16369916c4e545be?w=474&amp;amp;h=263&amp;amp;f=png&amp;amp;s=41753&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;center&gt;美团外卖：月均活跃用户3749万&lt;/center&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636992a8f6d860c?w=540&amp;amp;h=167&amp;amp;f=png&amp;amp;s=7729&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;center&gt;饿了么：月均活跃用户6178万&lt;/center&gt;
-
-&lt;p&gt;这两款软件都提供了按需送货服务，包括送外卖、超市商品、新鲜水果、蔬菜，非处方药、饮料、面包以及鲜花。换句话说，下载这两款app中的任意一款就相当于下载了美国的GrubHub、UberEats/DoorDash、Instacart和PostMates。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636993c3ad1ad17?w=1600&amp;amp;h=1600&amp;amp;f=png&amp;amp;s=988009&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;从设计和美学角度来说，由于这些软件功能点过多，很难将其设计成一个简洁美好的应用，但他们却另辟蹊径，将应用设计成为用户提供一个简单易用，具有良好购物体验的外卖应用，我非常欣赏他们的这种做法。
-—- –&lt;/p&gt;
-
-&lt;h1 id=&quot;他们有哪些做的好的地方呢&quot;&gt;他们有哪些做的好的地方呢？&lt;/h1&gt;
-
-&lt;h2 id=&quot;1信息透明化&quot;&gt;1、信息透明化&lt;/h2&gt;
-
-&lt;p&gt;近期的一项研究发现导致用户在结账过程中放弃支付主要有以下几种原因：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;60%：额外费用太高，例如配送费、税费等；&lt;/li&gt;
-  &lt;li&gt;23%：不能直观地看见或者计算订单总费用；&lt;/li&gt;
-  &lt;li&gt;18%：配送时间太长；&lt;/li&gt;
-  &lt;li&gt;11%：认为退货政策不公平或者不满意；&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;美团和饿了么对于这些问题都有自己的解决办法。他们将所有信息提前展示，确保了用户在结算页面时不会产生困惑。事实上，通过估算所有的隐藏费用并在结算前提现展示重要信息，用户会从购物的一开始就会有控制感，并且认为这个产品是可信赖的。
-&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/1636997ec8a547aa?w=2000&amp;amp;h=1787&amp;amp;f=jpeg&amp;amp;s=110356&quot; alt=&quot;&quot; /&gt;
-不得不承认的是，这种方式在美国是不容易做到的，因为中文相比于英语来说更加简洁高效。例如：“Limited Time Offer”占了18个字母的位置，但用中文“限时特惠”表达，只占8个字母的位置。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;2即时反馈&quot;&gt;2、即时反馈&lt;/h2&gt;
-
-&lt;p&gt;在我之前的文章中，谈论了在Instacart app的购物体验，其中一个关键点是，用户不知道最低消费额是多少，并且当用户满足了最低消费额的时候，应用没有提供任何关于此的提示，但美团和饿了么都巧妙的解决了这个问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699a405227ff0?w=1080&amp;amp;h=885&amp;amp;f=gif&amp;amp;s=1103176&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;饿了么将订单的总费用放在了用户挑选商品页面的tab栏。动画以及颜色的变化可以在订单达到最低消费额时清楚地告诉用户。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699a88f8254e8?w=2000&amp;amp;h=1787&amp;amp;f=jpeg&amp;amp;s=113453&quot; alt=&quot;&quot; /&gt;
-— -&lt;/p&gt;
-
-&lt;h2 id=&quot;3无缝衔接的交互&quot;&gt;3、无缝衔接的交互&lt;/h2&gt;
-
-&lt;p&gt;记得上一次你用手机购物的时候截屏是为什么吗？通常有以下几种原因：&lt;/p&gt;
-
-&lt;p&gt;A、把截屏分享给朋友或者家人&lt;/p&gt;
-
-&lt;p&gt;B、向售后反馈问题&lt;/p&gt;
-
-&lt;p&gt;美团和饿了么则考虑到了这个细节，当用户在App内进行截图操作时，提供了额外的分享以及反馈提示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/16/163699ae22df00a4?w=2000&amp;amp;h=4626&amp;amp;f=jpeg&amp;amp;s=264162&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;当用户熟悉一款app之后，他们就希望能够更高效地使用它。当用户使用app进行操作的时候，他们希望能够使用地更快，并希望app能够及时响应他们的操作。上面提到的操作在这款app的其他地方也可以找到，但是通过与截屏操作相结合的交互方式可以为用户创造流畅的用户体验，并最大化地提高了用户的使用效率。
-—— —&lt;/p&gt;
-
-&lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-
-&lt;p&gt;许多产品设计师认为中国的app功能太多，看起来也很丑。巧的是，最近我读了Jason Brush的一篇关于亚马逊设计理论的文章：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;亚马逊的成功让我们知道了一条设计界难以接受的理论：成功的设计未必是好看的。当然，随着以研究为导向的设计被广泛接受，认为设计仅仅是美学实践的观念很早就被揭穿了。然而，接受一个精心设计的用户体验可能并不好看对人们来说依然是一个挑战。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在我看来，美团外卖和饿了么就是用户体验很棒，但看起来不美观的典型例子。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 16 May 2018 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/05/16/eledesign/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/16/eledesign/</guid>
-        
-        <category>Design</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>7个小技巧大幅度提升UI动效品质新</title>
-        <description>&lt;h1 id=&quot;7个小技巧大幅度提升ui动效品质&quot;&gt;7个小技巧大幅度提升UI动效品质&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586f3c7197bee?w=560&amp;amp;h=420&amp;amp;f=jpeg&amp;amp;s=70528&quot; alt=&quot;&quot; /&gt;
- 优秀的动画，对于提升UI的逼格非常重要，在大多数情况下，针对动画进行合理的调整，就可以让你的UI变得更加出色，好的交互设计，能够展示状态之间的连续性，以及不同UI元素的的关系，同时，能够使得用户的注意力聚焦在重要的地方。
-所有的交互都是用体验版本的InVision Studio做出来的，这些都可以在官网获取到。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;将选项卡种的内容做成可滑动的&quot;&gt;将选项卡种的内容做成可滑动的&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/16358607f0b570f5?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=1155306&quot; alt=&quot;&quot; /&gt;
-左图的内容淡入淡出；右图的内容随着标签一起滑动。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;好的动效将内容从一个标签页淡出，再淡入到另一个标签页；&lt;/li&gt;
-  &lt;li&gt;优秀的动效让页面内容在不同标签之间移动，能够展现过度时的连续性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;当你设计选项卡或者弹出菜单这种交互时，试着将内容的位置与打开它的动作相关联。通过这种方式，你可以将你的内容和内容的位置都做成可视动画。做这种页面时，也加上一个可以在不同内容之间切换的滑动手势。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;关联卡片上的相关元素&quot;&gt;关联卡片上的相关元素&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586553c562e26?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=381277&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左边的卡片打开一个新页面是滑上来的；  右边则是扩展了卡片并使其占满屏幕。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;好的动画展示信息详情页时使用左滑或者上划的方式；&lt;/li&gt;
-  &lt;li&gt;优秀的动画会在有共同信息的两种状态之间建立联系。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;当给两种不同的状态的过渡做动画时，看看这两种状态之间有没有共有的元素，如果有则可以在动画中体现两者的联系。在InVision Studio中，两个相关联的页面有重复的元素时，当你创建一个Motion的时候，系统会自动在两个元素之间创建关联动画。这让创建动画原型变得轻而易举。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;在内容中使用瀑布流效果&quot;&gt;在内容中使用瀑布流效果&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586737f6ac987?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=803074&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左边的卡片通过滑动和淡入的效果显示; 
-右边的卡片在同样动画的基础上，让每个卡片都有短时间的延迟。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;当卡片进入屏幕时，好的动画改变它的位置和透明度；&lt;/li&gt;
-  &lt;li&gt;优秀的动画则会快速蔓延每组元素。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;要达到瀑布流的效果，可以将每个动画元素都保持相同的动画速度以及持续时长，并对其按序设置一定的延时。要将瀑布流的形式应用在组里，不能应用在单独的元素上。保持动画的快速简介，谷歌的提醒功能里，每个元素出现的间隔不超过20毫秒。点击动画里的瀑布流形式查看更多案例。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;让内容推开其他元素&quot;&gt;让内容推开其他元素&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/1635868386af47d6?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=244641&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左边的动画中，动画效果直接出线在其他内容上面。右边的动画中，随着动画的扩大，其他内容被推开了。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;好的动画直接在画面中移动和展示元素；&lt;/li&gt;
-  &lt;li&gt;优秀的动画则会展示出动画对其周围元素的影响。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;让内容与周围的环境相互动。这意味着让内容吸引或者赶走它周围的元素。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;让菜单从按钮中出现&quot;&gt;让菜单从按钮中出现&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/16358697c3ff069d?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=307263&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左图中菜单直接从下面滑入；右图的菜单则从打开它的按钮中扩展出来。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;好的动画菜单出现的方向与打开它的按钮的方向保持一致；&lt;/li&gt;
-  &lt;li&gt;优秀的动画菜单从打开它的按钮中展开。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;用按钮展示不同的状态&quot;&gt;用按钮展示不同的状态&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586adc1926bb6?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=1414382&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左边的动画使用文字表明状态；右边的动画则直接使用按钮展示不同状态。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;好的交互将活动状态用文字方式展示在按钮旁边；&lt;/li&gt;
-  &lt;li&gt;优秀的交互则直接用按钮展示不同状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;试着用按钮本身展示不同状态。例如：用旋转菊花或者加载动画代替CTA；或者在按钮背景中加一个动画表明进程。具体方式取决于你，核心就是利用好已有的用户已经与之交互的空间。如果你使用按钮颜色去确认成功状态，对于用户来说就是一个大彩蛋。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;将用户的注意力引导到重要的东西上&quot;&gt;将用户的注意力引导到重要的东西上&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2018/5/13/163586c953d6851d?w=1440&amp;amp;h=810&amp;amp;f=gif&amp;amp;s=612310&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;左图中的案例使用颜色和位置让元素突出显示；右图中则使用了一个简单的小动画吸引用户的注意力。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;好的设计使用颜色、尺寸和位置，来突出需要格外引起用户注意并触发用户行为的重点内容；&lt;/li&gt;
-  &lt;li&gt;优秀的设计使用动画引导用户将注意力放在重要的地方，并且不会打扰到用户。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;当用户需要做出一些重要的操作时，试着将这些操作的按钮以动画的方式展现，以吸引用户的注意力。可以做一些简单细微的动画并逐渐增加强度，并根据行动的重要性改变按钮的大小、颜色和动画的速度。记住只在最重要的操作上使用动画，因为你用的动画越多，它就变得越不重要并且会打扰到用户。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 12 May 2018 20:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2018/05/12/seventips/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/12/seventips/</guid>
         
         
       </item>
